@@ -1,0 +1,21 @@
+.card {
+    width: 100%;
+    //flex-basis: 45%;
+
+    a {
+        border: 1px solid #eaeaea;
+        display: block;
+        text-decoration: none;
+        padding: 20px;
+        border-radius: 3px;
+        color: #333;
+        transition: color 0.15s ease, border-color 0.15s ease;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: #0070f3;
+            border-color: #0070f3;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.card {
+  width: 100%;
+}
+.card a {
+  border: 1px solid #eaeaea;
+  display: block;
+  text-decoration: none;
+  padding: 20px;
+  border-radius: 3px;
+  color: #333;
+  -webkit-transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.card a:hover, .card a:focus, .card a:active {
+  color: #0070f3;
+  border-color: #0070f3;
+}
