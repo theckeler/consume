@@ -1,21 +1,72 @@
 .card {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: stretch;
     //flex-basis: 45%;
 
     a {
-        border: 1px solid #eaeaea;
+        border: 3px solid #eaeaea;
         display: block;
         text-decoration: none;
-        padding: 20px;
+        padding: 0;
         border-radius: 3px;
         color: #333;
         transition: color 0.15s ease, border-color 0.15s ease;
+        width: 100%;
+        max-height: 420px;
+        overflow: hidden;
+        position: relative;
 
         &:hover,
         &:focus,
         &:active {
             color: #0070f3;
             border-color: #0070f3;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 100;
+        }
+
+        strong {
+            display: block;
+            text-align: center;
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            padding: 10px 20px;
+            background: #0070f3;
+            color: #fff;
+        }
+    }
+
+    &.featured {
+        .extlink {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            z-index: 101;
+            width: 25px;
+            background: #0070f3;
+            border-radius: 2px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            padding: 3px;
+
+            svg {
+                width: 100%;
+                height: auto;
+
+                * {
+                    fill: #fff;
+                }
+            }
         }
     }
 }

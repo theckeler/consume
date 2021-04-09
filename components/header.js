@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Nav from './nav'
 import Image from 'next/image'
 import styles from '../styles/Header.module.css'
 //import { useRouter } from 'next/router'
@@ -12,7 +13,7 @@ const handleClick = (e) => {
     document.getElementsByTagName('body')[0].classList.toggle(styles.active);
 }
 
-const Header = ({ currentPage }) => (
+const Header = (props) => (
     <header id="header" className={styles.header}>
         <div className={'wrapper ' + styles.wrapper}>
             <div className={styles.logo}>
@@ -28,38 +29,7 @@ const Header = ({ currentPage }) => (
                     </a>
                 </Link>
             </div>
-
-            <nav className={styles.nav}>
-                <ul>
-                    <li>
-                        {currentPage == 'about' ? (
-                            <a>About</a>
-                        ) : (
-                            <Link href="/about">
-                                <a>About</a>
-                            </Link>
-                        )}
-                    </li>
-                    <li>
-                        {currentPage == 'about' ? (
-                            <a>About</a>
-                        ) : (
-                            <Link href="/about">
-                                <a>About</a>
-                            </Link>
-                        )}
-                    </li>
-                    <li>
-                        {currentPage == 'about' ? (
-                            <a>About</a>
-                        ) : (
-                            <Link href="/about">
-                                <a>About</a>
-                            </Link>
-                        )}
-                    </li>
-                </ul>
-            </nav >
+            <Nav currentPage={props.currentPage} />
 
             <ul id="hamburger" className={styles.hamburger} onClick={handleClick}>
                 <li></li>

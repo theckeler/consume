@@ -34,17 +34,22 @@ ul {
 
 .wrapper {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 40px;
 }
 
 .title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-  color: #333;
+  line-height: 1;
+  font-size: 44px;
+  color: #424242;
   text-align: center;
+  padding-bottom: 0;
+  border-bottom: 1px solid #eeeeee;
+  width: 100%;
+  text-transform: lowercase;
+  max-width: 1520px;
+  padding: 0 40px;
 }
 
 .section {
@@ -59,16 +64,91 @@ ul {
 .grid {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-@media (max-width: 600px) {
+.nav {
+  transition: all 0.5s ease-in-out;
+
+  ul {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    li {
+      margin: 0 2px;
+
+      &.svg {
+        a {
+          padding: 0;
+
+          &:hover {
+            svg {
+              fill: #0070f3;
+            }
+          }
+        }
+
+        svg {
+          width: 80%;
+          max-width: 40px;
+          height: auto;
+
+          * {
+            transition: all 0.3s ease-in-out;
+
+          }
+        }
+      }
+
+      a,
+      span {
+        padding: 12px 20px;
+        text-transform: uppercase;
+      }
+
+      a {
+        transition: all 0.3s ease-in-out;
+        color: #0070f3;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        //border: 1px solid;
+
+        &:hover {
+          color: #333;
+          text-decoration: underline;
+          background: #fdfdfd;
+        }
+      }
+
+      span {
+        color: #333;
+        background: #fdfdfd;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+a {
+  display: block;
+}
+
+@media (max-width: 992px) {
   .grid {
-    width: 100%;
-    flex-direction: column;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 }

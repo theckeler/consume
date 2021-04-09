@@ -12,6 +12,10 @@ const Meta = (props) => (
         <meta property="og:url" content="https:consumedesign.com" />
         <link rel="icon" type="image/png" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
+        <script type='text/javascript' src='/plugins/jquery-3.6.0.min.js'></script>
+        <script type='text/javascript' src='/plugins/jquery.fancybox.min.js'></script>
+        <link rel='stylesheet' href='/plugins/jquery.fancybox.min.css' type='text/css' media='' />
     </Head>
+
 )
 export default Meta

@@ -31,17 +31,22 @@ ul {
 
 .wrapper {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 40px;
 }
 
 .title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-  color: #333;
+  line-height: 1;
+  font-size: 44px;
+  color: #424242;
   text-align: center;
+  padding-bottom: 0;
+  border-bottom: 1px solid #eeeeee;
+  width: 100%;
+  text-transform: lowercase;
+  max-width: 1520px;
+  padding: 0 40px;
 }
 
 .section {
@@ -64,7 +69,7 @@ ul {
 .grid {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -76,12 +81,78 @@ ul {
       flex-wrap: wrap;
 }
 
-@media (max-width: 600px) {
+.nav {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.nav ul li {
+  margin: 0 2px;
+}
+.nav ul li.svg a {
+  padding: 0;
+}
+.nav ul li.svg a:hover svg {
+  fill: #0070f3;
+}
+.nav ul li.svg svg {
+  width: 80%;
+  max-width: 40px;
+  height: auto;
+}
+.nav ul li.svg svg * {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.nav ul li a,
+.nav ul li span {
+  padding: 12px 20px;
+  text-transform: uppercase;
+}
+.nav ul li a {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: #0070f3;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+.nav ul li a:hover {
+  color: #333;
+  text-decoration: underline;
+  background: #fdfdfd;
+}
+.nav ul li span {
+  color: #333;
+  background: #fdfdfd;
+  border-radius: 4px;
+}
+
+a {
+  display: block;
+}
+
+@media (max-width: 992px) {
   .grid {
-    width: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
