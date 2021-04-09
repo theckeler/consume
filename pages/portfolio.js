@@ -81,13 +81,13 @@ class Portfolio extends Component {
                                     <li className={portfolioStyles.card} key={post.slug}>
                                         <a onClick={this.handleClick} href={post._embedded['wp:featuredmedia']['0'].source_url} data-caption={post.title.rendered}>
                                             <strong>{post.title.rendered}</strong>
-                                            <img src={post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url} alt="{post.title.rendered}"></img>
+                                            <img src={post._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url} alt="{post.title.rendered}"></img>
                                         </a>
                                     </li>
                                 ))
                             }
                         </ul>
-                        <a onClick={() => this.getPosts(this.state.wpPage)} page={this.state.wpPage}>View Page {this.state.wpPage}</a>
+                        <a onClick={() => this.getPosts(this.state.wpPage)} page={this.state.wpPage} className="button">View Page {this.state.wpPage}</a>
                     </div>
 
                 </section>

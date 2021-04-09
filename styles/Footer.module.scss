@@ -11,8 +11,29 @@
 
   .wrapper {
     display: flex;
-    justify-content: flex-end;
     position: relative;
     align-items: center;
+
+    .madewith {
+      font-weight: 400;
+      font-size: 12px;
+      text-transform: lowercase;
+      color: #333;
+      background: #fdfdfd;
+      border-radius: 4px;
+      padding: 12px 20px;
+
+      strong {
+        font-weight: 700;
+      }
+
+      a {
+        display: inline-block;
+      }
+    }
+
+    .nav {
+      margin-left: auto;
+    }
   }
 }

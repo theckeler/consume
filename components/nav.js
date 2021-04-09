@@ -1,10 +1,11 @@
 import Link from 'next/link'
-import styles from '../styles/Header.module.css'
+import headerStyles from '../styles/Header.module.css'
+import foooterStyles from '../styles/Footer.module.css'
 import Image from 'next/image'
 
 const Nav = (props) => (
     <>
-        <nav className={'nav ' + styles.nav}>
+        <nav className={'nav ' + foooterStyles.nav + ' ' + headerStyles.nav}>
             <ul>
                 <li>
                     {props.currentPage == 'home' ? (
@@ -34,7 +35,7 @@ const Nav = (props) => (
                     )}
                 </li>
                 <li>
-                    <ul className={styles.icons}>
+                    <ul className={headerStyles.icons}>
                         <li className="svg">
                             <a href="https://www.linkedin.com/in/consumedesign/" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

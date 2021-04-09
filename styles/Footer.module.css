@@ -13,11 +13,26 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.footer .wrapper .madewith {
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: lowercase;
+  color: #333;
+  background: #fdfdfd;
+  border-radius: 4px;
+  padding: 12px 20px;
+}
+.footer .wrapper .madewith strong {
+  font-weight: 700;
+}
+.footer .wrapper .madewith a {
+  display: inline-block;
+}
+.footer .wrapper .nav {
+  margin-left: auto;
 }
