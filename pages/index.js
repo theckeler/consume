@@ -7,11 +7,16 @@ import axios from 'axios'
 
 
 export async function getStaticProps() {
-  const response = await axios.get('https://consumedesign.com/wp-json/wp/v2/posts/?categories=43&_embed&per_page=8')
-  console.log(response.data)
+  const response = await axios.get('https://admin.consumedesign.com/wp-json/wp/v2/posts/?categories=43&_embed&per_page=8')
+
   return {
     props: {
-      posts: response.data
+      wpPage: 1,
+      posts: response.data,
+      outputPosts: response.data,
+      scrollToThis: null,
+      postCount: 0,
+      postCheck: []
     },
   }
 }
@@ -19,6 +24,7 @@ export async function getStaticProps() {
 
 
 function Blog({ posts }) {
+
   return (
     <>
       <Meta title="Home" />
@@ -32,9 +38,8 @@ function Blog({ posts }) {
       <section className={portfolioStyles.section}>
         <div className={'wrapper ' + portfolioStyles.wrapper}>
 
-          <ul className="grid">
+          <ul className="grid noload">
             {
-
               posts.map(post => {
                 const fullImage = post._embedded['wp:featuredmedia']['0'].source_url
                 const medImage = post._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url

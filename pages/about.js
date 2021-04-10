@@ -15,11 +15,7 @@ export async function getStaticProps() {
 }
 
 function About(props) {
-    // useRouter returns the router object
     const router = useRouter();
-
-    // console.log({ currentPage });
-
     return (
         <>
             <Meta title="About" />
@@ -30,14 +26,14 @@ function About(props) {
                 <h1 className="title">About</h1>
             </section>
 
-            <section className="wrapper">
+            <section className={'wrapper ' + styles.content}>
                 <p>Experienced Freelance Graphic Web Designer with a demonstrated history of working in the graphic design industry. Skilled in PHP, jQuery, JavaScript, CSS, HTML, Sass, Responsive Web Design, Web Design, Website Administration, Page Layout, and Cross-browser Compatibility. Strong arts and design professional with a Bachelor of Arts focused in Visual Communication & Design from Kent State University.</p>
 
                 <p>Freelance print design, website design, website UI, and website UX for local and national clients.</p>
 
                 <p>Current and past client list includes:</p>
 
-                <ul>
+                <ul className={styles.list}>
                     <li>Alliance Bicycles</li>
                     <li>Bike Cleveland</li>
                     <li>Cleveland Film Society</li>
@@ -62,6 +58,52 @@ function About(props) {
                     <li>Valentine Distilling</li>
                     <li>Werner Paddles</li>
                 </ul>
+
+                <p>Expertise in</p>
+                <ul className={styles.list}>
+                    <li>SASS</li>
+                    <li>Cascading Style Sheets (CSS)</li>
+                    <li>HTML</li>
+                    <li>jQuery</li>
+                    <li>Responsive Web Design</li>
+                    <li>Responsive Web Design</li>
+                    <li>Wordpress</li>
+                    <li>Adobe Photoshop</li>
+                    <li>Adobe Illustrator</li>
+                    <li>Adobe InDesign</li>
+                </ul>
+
+                <p>Proficient in</p>
+                <ul className={styles.list}>
+                    <li>PHP</li>
+                    <li>HTML</li>
+                    <li>JavaScript</li>
+                    <li>jQuery</li>
+                    <li>SVG</li>
+                    <li>Visual Studio</li>
+                    <li>Visual Studio Code</li>
+                </ul>
+
+                <p>Experienced in</p>
+                <ul className={styles.list}>
+                    <li>Next.js</li>
+                    <li>React</li>
+                    <li>TypeScript</li>
+                    <li>SQL</li>
+                    <li>JSON</li>
+                    <li>AJAX</li>
+                    <li>Git</li>
+                </ul>
+
+                <p>Knowlege of</p>
+                <ul className={styles.list}>
+                    <li>AngularJS</li>
+                    <li>Python</li>
+                    <li>ASP</li>
+                    <li>Node.js</li>
+                    <li>ASP</li>
+                </ul>
+
             </section>
 
             <Footer currentPage="about"></Footer>

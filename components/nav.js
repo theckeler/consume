@@ -35,7 +35,7 @@ const Nav = (props) => (
                     )}
                 </li>
                 <li>
-                    <ul className={headerStyles.icons}>
+                    <ul className={foooterStyles.icons + ' ' + headerStyles.icons}>
                         <li className="svg">
                             <a href="https://www.linkedin.com/in/consumedesign/" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

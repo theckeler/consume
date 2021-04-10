@@ -8,41 +8,48 @@ import portfolioStyles from '../styles/Portfolio.module.css'
 class Portfolio extends Component {
     constructor() {
         super();
-        console.log('------------constructor--------------')
         this.state = {
             wpPage: 1,
-            posts: []
+            posts: [],
+            outputPosts: [],
+            scrollToThis: null,
+            postCount: 0,
+            postCheck: []
         };
     }
 
     componentWillMount() {
-        console.log('------------componentWillMount--------------')
         this.getPosts(1)
     }
 
     getPosts = (wpPage) => {
-        console.log('------------getPosts--------------')
-        //console.log('wpPage: ' + wpPage)
-
-        const url = 'https://consumedesign.com/wp-json/wp/v2/posts/?page=' + wpPage + '&per_page=8&_embed';
+        const url = 'https://admin.consumedesign.com/wp-json/wp/v2/posts/?page=' + wpPage + '&categories=15&per_page=100&_embed';
 
         axios.get(url)
             .then(response => {
-                //  console.log(response.data)
+                const outputPosts = [...this.state.outputPosts, ...response.data]
 
                 this.setState({
+                    outputPosts: outputPosts,
                     wpPage: (wpPage + 1),
-                    posts: response.data
+                    posts: response.data,
+                    scrollToThis: response.data[0].slug,
+                    postCount: outputPosts.length + 1,
                 })
+
+            })
+            .then(response => {
+                document.getElementById("portfolio-main").classList.add("active");
+                document.getElementById("portfolio-button").classList.add("active");
+                document.getElementById("portfolio-container").classList.remove("loading");
             })
             .catch(error => {
-                console.log(error)
+                document.getElementById("portfolio-button").classList.remove("active");
             })
     }
 
 
     handleClick = (e) => {
-        console.log('------------handleClick--------------')
         e.preventDefault()
         $.fancybox.open({
             src: e.currentTarget.href,
@@ -53,15 +60,23 @@ class Portfolio extends Component {
                 ],
             }
         });
+    }
 
+
+    loadMore = (postCount) => {
+        //e.preventDefault()
+        this.getPosts(this.state.wpPage)
+        //const scrollToMe = '#' + this.state.scrollToThis
+        // console.log(postCount)
+
+        document.getElementById("portfolio-main").classList.remove("active")
+        document.getElementById("portfolio-button").classList.remove("active")
+        document.getElementById("portfolio-container").classList.add("loading")
+        //this.refs[i].scrollIntoView({ block: 'end', behavior: 'smooth' });
+        //  window.scrollTo(0, topHight);
     }
 
     render() {
-        { console.log('--------render--------') }
-
-        //{ console.log('wpPage: ' + this.state.wpPage) }
-        { console.log(this.state.posts) }
-
         return (
             <>
                 <Meta title="Portfolio" />
@@ -73,21 +88,36 @@ class Portfolio extends Component {
                 </section>
 
                 <section className={portfolioStyles.section}>
-                    <div className={'wrapper ' + portfolioStyles.wrapper}>
+                    <div id="portfolio-container" className={'load loading wrapper ' + portfolioStyles.wrapper}>
 
-                        <ul className="grid" id="insert">
+                        <ul className="grid" id="portfolio-main">
                             {
-                                this.state.posts.map((post, index) => (
-                                    <li className={portfolioStyles.card} key={post.slug}>
-                                        <a onClick={this.handleClick} href={post._embedded['wp:featuredmedia']['0'].source_url} data-caption={post.title.rendered}>
-                                            <strong>{post.title.rendered}</strong>
-                                            <img src={post._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url} alt="{post.title.rendered}"></img>
-                                        </a>
-                                    </li>
-                                ))
+                                this.state.outputPosts.map(post => {
+                                    const ref = React.createRef();
+                                    const postID = post.id
+
+                                    if ('wp:featuredmedia' in post._embedded) {
+                                        return (
+                                            <li className={portfolioStyles.card} id={post.id} key={post.id} ref={ref[post.id]}>
+
+                                                <a className={portfolioStyles.anchor} name={post.slug} id={post.slug}></a>
+                                                <a onClick={this.handleClick} href={post._embedded['wp:featuredmedia']['0'].source_url} data-caption={post.title.rendered}>
+                                                    <strong>{post.title.rendered}</strong>
+                                                    <img src={post._embedded['wp:featuredmedia']['0'].source_url} alt="{post.title.rendered}"></img>
+                                                </a>
+                                            </li>
+                                        )
+                                    } else {
+                                        return (
+                                            <li className="hidden" key={post.id} ref={ref[post.id]}>
+                                                <a></a>
+                                            </li>
+                                        )
+                                    }
+                                })
                             }
                         </ul>
-                        <a onClick={() => this.getPosts(this.state.wpPage)} page={this.state.wpPage} className="button">View Page {this.state.wpPage}</a>
+                        <a id="portfolio-button" onClick={this.loadMore.bind(this, this.state.postCount)} page={this.state.wpPage} className="hidden button">Load More</a>
                     </div>
 
                 </section>
@@ -99,8 +129,6 @@ class Portfolio extends Component {
 
 
     componentDidMount(props) {
-        console.log('------------componentDidMount--------------')
-        // this.setState({ posts: this.getPosts(1) })
     }
 }
 

@@ -10,7 +10,7 @@ const handleClick = (e) => {
     console.log('My object: ', e);
     document.getElementById("header").classList.toggle(styles.active);
     document.getElementById("hamburger").classList.toggle(styles.active);
-    document.getElementsByTagName('body')[0].classList.toggle(styles.active);
+    // document.getElementsByTagName('body')[0].classList.toggle(styles.active);
 }
 
 const Header = (props) => (

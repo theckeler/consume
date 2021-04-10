@@ -37,3 +37,54 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .footer {
+    .nav {
+
+      a,
+      span {
+        padding: 8px 10px;
+        ;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .footer {
+    .wrapper {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    .wrapper {
+      padding-bottom: 60px;
+
+      .nav {
+        ul {
+          flex-direction: column;
+          align-items: flex-end;
+
+          a,
+          span {
+            display: inline-block;
+            margin: 4px 0;
+          }
+
+          &.icons {
+            flex-direction: row;
+
+            li {
+              max-width: 60px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,9 @@
 @import "mixins";
 
+body.active {
+  overflow: hidden;
+}
+
 .header {
   border-bottom: 1px solid #eaeaea;
   width: 100%;

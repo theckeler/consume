@@ -23,6 +23,14 @@
   overflow: hidden;
   position: relative;
 }
+.card a.anchor {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 0;
+}
 .card a:hover, .card a:focus, .card a:active {
   color: #0070f3;
   border-color: #0070f3;
