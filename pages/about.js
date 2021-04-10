@@ -61,11 +61,12 @@ function About(props) {
 
                 <p>Expertise in</p>
                 <ul className={styles.list}>
-                    <li>SASS</li>
                     <li>Cascading Style Sheets (CSS)</li>
+                    <li>Syntactically Awesome Style Sheets (Sass)</li>
                     <li>HTML</li>
                     <li>jQuery</li>
-                    <li>Responsive Web Design</li>
+                    <li>UI</li>
+                    <li>UX</li>
                     <li>Responsive Web Design</li>
                     <li>Wordpress</li>
                     <li>Adobe Photoshop</li>
