@@ -101,7 +101,6 @@ function About(props) {
                     <li>Python</li>
                     <li>ASP</li>
                     <li>Node.js</li>
-                    <li>ASP</li>
                 </ul>
 
             </section>
