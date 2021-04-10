@@ -97,12 +97,13 @@ class Portfolio extends Component {
                                     const postID = post.id
 
                                     if ('wp:featuredmedia' in post._embedded) {
+                                        console.log(post)
                                         return (
                                             <li className={portfolioStyles.card} id={post.id} key={post.id} ref={ref[post.id]}>
 
                                                 <a className={portfolioStyles.anchor} name={post.slug} id={post.slug}></a>
                                                 <a onClick={this.handleClick} href={post._embedded['wp:featuredmedia']['0'].source_url} data-caption={post.title.rendered}>
-                                                    <strong>{post.title.rendered}</strong>
+                                                    <strong dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
                                                     <img src={post._embedded['wp:featuredmedia']['0'].source_url} alt="{post.title.rendered}"></img>
                                                 </a>
                                             </li>
