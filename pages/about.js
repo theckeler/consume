@@ -77,7 +77,6 @@ function About(props) {
                 <p>Proficient in</p>
                 <ul className={styles.list}>
                     <li>PHP</li>
-                    <li>HTML</li>
                     <li>JavaScript</li>
                     <li>jQuery</li>
                     <li>SVG</li>
