@@ -1,8 +1,8 @@
 .card {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-self: stretch;
+    //display: flex;
+    //justify-content: center;
+    //align-self: stretch;
     //flex-basis: 45%;
 
     a {
@@ -35,22 +35,42 @@
         }
 
         img {
+            display: block;
+        }
+
+        /*
+        img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             position: relative;
             z-index: 100;
         }
-
+*/
         strong {
             display: block;
             text-align: center;
             font-weight: 700;
             font-size: 18px;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            //margin-bottom: 10px;
             padding: 10px 20px;
             background: #0070f3;
             color: #fff;
+        }
+
+        .content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            color: #fff;
+            background: #333;
+            padding: 10px 20px;
+
+            p {
+                font-size: 12px;
+            }
         }
     }
 

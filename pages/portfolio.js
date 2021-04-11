@@ -97,6 +97,8 @@ class Portfolio extends Component {
                                     const ref = React.createRef();
                                     const postID = post.id
 
+                                    const content = post.content.rendered;
+
                                     if ('wp:featuredmedia' in post._embedded) {
                                         console.log(post)
                                         return (
@@ -110,8 +112,12 @@ class Portfolio extends Component {
                                                         height={post._embedded["wp:featuredmedia"][0].media_details.height}
                                                         width={post._embedded["wp:featuredmedia"][0].media_details.width}
                                                         alt={post.title.rendered}
-                                                        layout="responsive"
                                                     />
+
+                                                    {content.length > 0 &&
+                                                        <div className={portfolioStyles.content} dangerouslySetInnerHTML={{ __html: content }} />
+                                                    }
+
                                                 </a>
                                             </li>
                                         )
