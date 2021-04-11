@@ -98,6 +98,19 @@ body.active {
   }
 }
 
+@media (max-width: 1200px) {
+  .header {
+    .nav {
+
+      a,
+      span {
+        padding: 8px 10px;
+        ;
+      }
+    }
+  }
+}
+
 @media (max-width: 992px) {
   .header {
 

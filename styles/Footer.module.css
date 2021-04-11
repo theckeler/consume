@@ -38,12 +38,6 @@
 }
 
 @media (max-width: 1200px) {
-  .footer .nav a,
-.footer .nav span {
-    padding: 8px 10px;
-  }
-}
-@media (max-width: 992px) {
   .footer .wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -52,6 +46,10 @@
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
+  }
+  .footer .nav a,
+.footer .nav span {
+    padding: 8px 10px;
   }
 }
 @media (max-width: 768px) {

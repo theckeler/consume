@@ -8,29 +8,29 @@ const Nav = (props) => (
         <nav className={'nav ' + foooterStyles.nav + ' ' + headerStyles.nav}>
             <ul>
                 <li>
+                    {props.currentPage == 'about' ? (
+                        <span>About/Skills/Experience</span>
+                    ) : (
+                        <Link href="/about">
+                            <a>About/Skills/Experience</a>
+                        </Link>
+                    )}
+                </li>
+                <li>
                     {props.currentPage == 'home' ? (
-                        <span>home</span>
+                        <span>Featured Projects</span>
                     ) : (
                         <Link href="/">
-                            <a>home</a>
+                            <a>Featured Projects</a>
                         </Link>
                     )}
                 </li>
                 <li>
                     {props.currentPage == 'portfolio' ? (
-                        <span>portfolio</span>
+                        <span>Portfolio</span>
                     ) : (
                         <Link href="/portfolio">
-                            <a>portfolio</a>
-                        </Link>
-                    )}
-                </li>
-                <li>
-                    {props.currentPage == 'about' ? (
-                        <span>About</span>
-                    ) : (
-                        <Link href="/about">
-                            <a>About</a>
+                            <a>Portfolio</a>
                         </Link>
                     )}
                 </li>

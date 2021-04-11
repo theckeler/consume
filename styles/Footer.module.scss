@@ -40,6 +40,11 @@
 
 @media (max-width: 1200px) {
   .footer {
+    .wrapper {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+    }
+
     .nav {
 
       a,
@@ -52,12 +57,7 @@
 }
 
 @media (max-width: 992px) {
-  .footer {
-    .wrapper {
-      flex-direction: column-reverse;
-      align-items: flex-end;
-    }
-  }
+  .footer {}
 }
 
 @media (max-width: 768px) {
