@@ -4,6 +4,7 @@ import Meta from '../components/meta'
 import axios from 'axios'
 import React, { Component } from 'react'
 import portfolioStyles from '../styles/Portfolio.module.css'
+import Image from 'next/image'
 
 class Portfolio extends Component {
     constructor() {
@@ -104,7 +105,13 @@ class Portfolio extends Component {
                                                 <a className={portfolioStyles.anchor} name={post.slug} id={post.slug}></a>
                                                 <a onClick={this.handleClick} href={post._embedded['wp:featuredmedia']['0'].source_url} data-caption={post.title.rendered}>
                                                     <strong dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-                                                    <img src={post._embedded['wp:featuredmedia']['0'].source_url} alt="{post.title.rendered}"></img>
+                                                    <Image
+                                                        src={post._embedded['wp:featuredmedia']['0'].source_url}
+                                                        height={post._embedded["wp:featuredmedia"][0].media_details.height}
+                                                        width={post._embedded["wp:featuredmedia"][0].media_details.width}
+                                                        alt={post.title.rendered}
+                                                        layout="responsive"
+                                                    />
                                                 </a>
                                             </li>
                                         )
