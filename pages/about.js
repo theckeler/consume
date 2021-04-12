@@ -67,9 +67,9 @@ function About(props) {
             <section className={'wrapper ' + styles.content}>
                 <p>Expertise in</p>
                 <ul className={styles.list}>
-                    <li>CSS</li>
-                    <li>Sass</li>
-                    <li>HTML</li>
+                    <li>HTML/HTML5</li>
+                    <li>CSS/CSS3</li>
+                    <li>SASS/LESS</li>
                     <li>jQuery</li>
                     <li>UI</li>
                     <li>UX</li>
@@ -95,10 +95,10 @@ function About(props) {
                     <li>Next.js</li>
                     <li>React</li>
                     <li>TypeScript</li>
-                    <li>SQL</li>
+                    <li>MySQL</li>
                     <li>JSON</li>
                     <li>AJAX</li>
-                    <li>Git</li>
+                    <li>Git/Github</li>
                 </ul>
 
                 <p>Knowlege of</p>
@@ -108,6 +108,7 @@ function About(props) {
                     <li>ASP</li>
                     <li>Node.js</li>
                     <li>C#</li>
+                    <li>REST API</li>
                 </ul>
 
             </section>
