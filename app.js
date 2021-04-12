@@ -1,8 +1,7 @@
-//import '../styles/globals.scss'
+var http = require("http");
 
-function MyApp({ Component, pageProps }) {
-    //return <Component {...pageProps} />
-    return <div>test</div>
-}
-
-export default MyApp
+http.createServer(function (request, response) {
+    response.writeHead(200, { "Content-Type": "text/plain" });
+    response.write("Hello World");
+    response.end();
+}).listen(80);
