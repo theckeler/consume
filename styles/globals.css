@@ -209,6 +209,8 @@ a {
 .load {
   min-height: 50vh;
   max-height: 10000vh;
+  -webkit-transition: max-height 0.2s ease-in-out;
+  transition: max-height 0.2s ease-in-out;
 }
 .load.loading {
   min-height: 50vh;

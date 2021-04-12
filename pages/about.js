@@ -67,8 +67,8 @@ function About(props) {
             <section className={'wrapper ' + styles.content}>
                 <p>Expertise in</p>
                 <ul className={styles.list}>
-                    <li>Cascading Style Sheets (CSS)</li>
-                    <li>Syntactically Awesome Style Sheets (Sass)</li>
+                    <li>CSS</li>
+                    <li>Sass</li>
                     <li>HTML</li>
                     <li>jQuery</li>
                     <li>UI</li>
@@ -107,6 +107,7 @@ function About(props) {
                     <li>Python</li>
                     <li>ASP</li>
                     <li>Node.js</li>
+                    <li>C#</li>
                 </ul>
 
             </section>

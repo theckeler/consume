@@ -5,6 +5,7 @@ import axios from 'axios'
 import React, { Component } from 'react'
 import portfolioStyles from '../styles/Portfolio.module.css'
 import Image from 'next/image'
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 class Portfolio extends Component {
     constructor() {
@@ -89,7 +90,7 @@ class Portfolio extends Component {
                 </section>
 
                 <section className={portfolioStyles.section}>
-                    <div id="portfolio-container" className={'load loading wrapper ' + portfolioStyles.wrapper}>
+                    <div id="portfolio-container" className={'load loading wrapper '}>
 
                         <ul className="grid" id="portfolio-main">
                             {
