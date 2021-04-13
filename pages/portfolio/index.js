@@ -1,11 +1,10 @@
-import Header from '../components/header'
-import Footer from '../components/footer'
-import Meta from '../components/meta'
+import Header from '../../components/header'
+import Footer from '../../components/footer'
+import Meta from '../../components/meta'
 import axios from 'axios'
 import React, { Component } from 'react'
-import portfolioStyles from '../styles/Portfolio.module.css'
+import portfolioStyles from '../../styles/Portfolio.module.css'
 import Image from 'next/image'
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 class Portfolio extends Component {
     constructor() {
@@ -78,6 +77,12 @@ class Portfolio extends Component {
         //  window.scrollTo(0, topHight);
     }
 
+    handleLoad = (e, postID) => {
+        //e.classList.remove("loading")
+        console.log(postID)
+        document.getElementById(postID).classList.remove("loading");
+    }
+
     render() {
         return (
             <>
@@ -90,7 +95,7 @@ class Portfolio extends Component {
                 </section>
 
                 <section className={portfolioStyles.section}>
-                    <div id="portfolio-container" className={'load loading wrapper '}>
+                    <div id="portfolio-container" className={'load page loading wrapper '}>
 
                         <ul className="grid" id="portfolio-main">
                             {
@@ -103,7 +108,7 @@ class Portfolio extends Component {
                                     if ('wp:featuredmedia' in post._embedded) {
                                         //  console.log(post)
                                         return (
-                                            <li className={portfolioStyles.card} id={post.id} key={post.id} ref={ref[post.id]}>
+                                            <li className={portfolioStyles.card + ' card loading'} id={post.id} key={post.id} ref={ref[post.id]}>
 
                                                 <a className={portfolioStyles.anchor} name={post.slug} id={post.slug}></a>
                                                 <a onClick={this.handleClick} href={post._embedded['wp:featuredmedia']['0'].source_url} data-caption={post.title.rendered}>
@@ -113,8 +118,8 @@ class Portfolio extends Component {
                                                         height={post._embedded["wp:featuredmedia"][0].media_details.height}
                                                         width={post._embedded["wp:featuredmedia"][0].media_details.width}
                                                         alt={post.title.rendered}
+                                                        onLoad={(event, postID) => this.handleLoad(event, post.id)}
                                                     />
-
                                                     {content.length > 0 &&
                                                         <div className={portfolioStyles.content} dangerouslySetInnerHTML={{ __html: content }} />
                                                     }
@@ -144,6 +149,7 @@ class Portfolio extends Component {
 
 
     componentDidMount(props) {
+
     }
 }
 

@@ -173,7 +173,7 @@ a {
 .loading {
   position: relative;
 }
-.loading:before, .loading:after {
+.loading.page:before, .loading.page:after {
   content: "";
   position: absolute;
   top: 50%;
@@ -185,7 +185,7 @@ a {
   -webkit-transform-origin: center;
           transform-origin: center;
 }
-.loading:before {
+.loading.page:before {
   width: 40px;
   height: 40px;
   border: 6px solid #333;
@@ -196,7 +196,7 @@ a {
           animation-delay: 0s;
   border-top-color: transparent;
 }
-.loading:after {
+.loading.page:after {
   width: 100px;
   height: 100px;
   border: 3px solid #333;
@@ -204,6 +204,28 @@ a {
   -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
   border-bottom-color: transparent;
+}
+.loading.card a {
+  background: #f1f1f1;
+  position: relative;
+}
+.loading.card a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60px;
+  width: 100%;
+  height: 100%;
+  background: #e0e0e0;
+  background: -webkit-gradient(linear, left top, right top, from(#f1f1f1), color-stop(50%, #e0e0e0), color-stop(51%, #e0e0e0), to(#f1f1f1));
+  background: linear-gradient(to right, #f1f1f1 0%, #e0e0e0 50%, #e0e0e0 51%, #f1f1f1 100%);
+  -webkit-animation: loadcard 0.5s infinite;
+          animation: loadcard 0.5s infinite;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+.loading.card a > * {
+  opacity: 0;
 }
 
 .load {
@@ -233,6 +255,27 @@ a {
   opacity: 1;
 }
 
+@-webkit-keyframes loadcard {
+  0% {
+    -webkit-transform: translateX(-60px);
+            transform: translateX(-60px);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes loadcard {
+  0% {
+    -webkit-transform: translateX(-60px);
+            transform: translateX(-60px);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
 @-webkit-keyframes loadme {
   0% {
     -webkit-transform: translate(-50%, -50%) rotate(0deg);
@@ -243,7 +286,6 @@ a {
             transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-
 @keyframes loadme {
   0% {
     -webkit-transform: translate(-50%, -50%) rotate(0deg);
