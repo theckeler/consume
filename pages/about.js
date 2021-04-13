@@ -103,7 +103,6 @@ function About(props) {
                     <li>AJAX</li>
                     <li>Git/Github</li>
                     <li>Web Accessibility Standards (WCAG)</li>
-                    <li>Web Accessibility Standards (WCAG)</li>
                     <li>Figma</li>
                 </ul>
 
