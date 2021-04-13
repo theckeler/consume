@@ -67,6 +67,9 @@ function About(props) {
             <section className={'wrapper ' + styles.content}>
                 <p>Expertise in</p>
                 <ul className={styles.list}>
+                    <li>Backpacking</li>
+                    <li>Mountain Biking</li>
+                    <li>Camping</li>
                     <li>HTML/HTML5</li>
                     <li>CSS/CSS3</li>
                     <li>SASS/LESS</li>
