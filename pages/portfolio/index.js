@@ -24,7 +24,7 @@ class Portfolio extends Component {
     }
 
     getPosts = (wpPage) => {
-        const url = 'https://admin.consumedesign.com/wp-json/wp/v2/posts/?page=' + wpPage + '&categories=15&per_page=100&_embed';
+        const url = 'https://admin.consumedesign.com/wp-json/wp/v2/posts/?categories=15&per_page=100&_embed';
 
         axios.get(url)
             .then(response => {
