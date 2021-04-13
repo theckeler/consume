@@ -27,11 +27,11 @@ function About(props) {
             </section>
 
             <section className={'wrapper ' + styles.content}>
-                <p>Experienced Freelance Graphic Web Designer with a demonstrated history of working in the graphic design industry. Skilled in PHP, jQuery, JavaScript, CSS, HTML, Sass, Responsive Web Design, Web Design, Website Administration, Page Layout, and Cross-browser Compatibility. Strong arts and design professional with a Bachelor of Arts focused in Visual Communication & Design from Kent State University.</p>
+                <p>Experienced Freelance Graphic Web Designer with a demonstrated history of working in the graphic design industry. Skilled in jQuery, JavaScript, CSS, HTML, Sass, Responsive Web Design, Web Design, Page Layout, and Cross-browser Compatibility. Strong arts and design professional with a Bachelor of Arts focused in Visual Communication & Design from Kent State University.</p>
 
                 <p>Freelance print design, website design, website UI, and website UX for local and national clients.</p>
 
-                <p>Current and past client list includes:</p>
+                <p><strong>Current and past client list includes:</strong></p>
 
                 <ul className={styles.list}>
                     <li>Alliance Bicycles</li>
@@ -103,6 +103,8 @@ function About(props) {
                     <li>AJAX</li>
                     <li>Git/Github</li>
                     <li>Web Accessibility Standards (WCAG)</li>
+                    <li>Web Accessibility Standards (WCAG)</li>
+                    <li>Figma</li>
                 </ul>
 
                 <p>Knowlege of</p>
