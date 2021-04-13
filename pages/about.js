@@ -99,6 +99,7 @@ function About(props) {
                     <li>JSON</li>
                     <li>AJAX</li>
                     <li>Git/Github</li>
+                    <li>Web Accessibility Standards (WCAG)</li>
                 </ul>
 
                 <p>Knowlege of</p>
