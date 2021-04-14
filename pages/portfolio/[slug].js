@@ -37,14 +37,22 @@ function Post(props) {
         <>
             <Meta title="Portfolio" />
 
-            <Header currentPage="portfolio" className={portfolioStyles.nav} />
+            <Header currentPage="portfolio-page" className={portfolioStyles.nav} />
 
             <section className="section">
-                <h1 className="title">{props.finalPost.title.rendered}</h1>
+                <h1 className="title" dangerouslySetInnerHTML={{ __html: props.finalPost.title.rendered }} />
             </section>
 
             <section className="section">
-
+                <Image
+                    src={props.finalPost._embedded['wp:featuredmedia']['0'].source_url}
+                    height={props.finalPost._embedded["wp:featuredmedia"][0].media_details.height}
+                    width={props.finalPost._embedded["wp:featuredmedia"][0].media_details.width}
+                    alt={props.finalPost.title.rendered}
+                />
+                {props.finalPost.content.rendered.length > 0 &&
+                    <div className={portfolioStyles.content} dangerouslySetInnerHTML={{ __html: content }} />
+                }
             </section>
 
             <Footer currentPage="portfolio"></Footer>

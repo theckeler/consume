@@ -5,6 +5,7 @@ import axios from 'axios'
 import React, { Component } from 'react'
 import portfolioStyles from '../../styles/Portfolio.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
 class Portfolio extends Component {
     constructor() {
@@ -49,20 +50,23 @@ class Portfolio extends Component {
             })
     }
 
+    /*
 
-    handleClick = (e) => {
-        e.preventDefault()
-        $.fancybox.open({
-            src: e.currentTarget.href,
-            opts: {
-                clickContent: false,
-                buttons: [
-                    "close"
-                ],
-            }
-        });
-    }
+handleClick = (e) => {
+    e.preventDefault()
 
+
+    $.fancybox.open({
+        src: e.currentTarget.href,
+        opts: {
+            clickContent: false,
+            buttons: [
+                "close"
+            ],
+        }
+    });
+}
+    */
 
     loadMore = (postCount) => {
         //e.preventDefault()
@@ -79,6 +83,7 @@ class Portfolio extends Component {
 
     handleLoad = (e, postID) => {
         //e.classList.remove("loading")
+        //console.log(postID)
         document.getElementById(postID).classList.remove("loading");
     }
 
@@ -102,34 +107,28 @@ class Portfolio extends Component {
                                     const ref = React.createRef();
                                     const postID = post.id
 
-                                    const date = new Date(post.date)
-                                    // console.log(date)
-                                    /*
                                     const content = post.content.rendered;
-                                    {
-                                        content.length > 0 &&
-                                        <div className={portfolioStyles.content} dangerouslySetInnerHTML={{ __html: content }} />
-                                    }
-                                    */
 
                                     if ('wp:featuredmedia' in post._embedded) {
-                                        //console.log(post)
+                                        //  console.log(post)
                                         return (
                                             <li className={portfolioStyles.card + ' card loading'} id={post.id} key={post.id} ref={ref[post.id]}>
+                                                <Link href={'/portfolio/' + post.slug}>
+                                                    <a>
+                                                        <strong dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+                                                        <Image
+                                                            src={post._embedded['wp:featuredmedia']['0'].source_url}
+                                                            height={post._embedded["wp:featuredmedia"][0].media_details.height}
+                                                            width={post._embedded["wp:featuredmedia"][0].media_details.width}
+                                                            alt={post.title.rendered}
+                                                            onLoad={(event, postID) => this.handleLoad(event, post.id)}
+                                                        />
+                                                        {content.length > 0 &&
+                                                            <div className={portfolioStyles.content} dangerouslySetInnerHTML={{ __html: content }} />
+                                                        }
 
-                                                <a className={portfolioStyles.anchor} name={post.slug} id={post.slug}></a>
-                                                <a onClick={this.handleClick} href={post._embedded['wp:featuredmedia']['0'].source_url} data-caption={post.title.rendered}>
-                                                    <strong dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-                                                    <Image
-                                                        src={post._embedded['wp:featuredmedia']['0'].source_url}
-                                                        height={post._embedded["wp:featuredmedia"][0].media_details.height}
-                                                        width={post._embedded["wp:featuredmedia"][0].media_details.width}
-                                                        alt={post.title.rendered}
-                                                        onLoad={(event, postID) => this.handleLoad(event, post.id)}
-                                                    />
-
-                                                    <div className={portfolioStyles.content}>{date.getFullYear()}</div>
-                                                </a>
+                                                    </a>
+                                                </Link>
                                             </li>
                                         )
                                     } else {
