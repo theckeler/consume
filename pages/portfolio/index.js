@@ -113,7 +113,7 @@ class Portfolio extends Component {
                                     */
 
                                     if ('wp:featuredmedia' in post._embedded) {
-                                        //console.log(post)
+                                        console.log(post)
                                         return (
                                             <li className={portfolioStyles.card + ' card loading'} id={post.id} key={post.id} ref={ref[post.id]}>
 
@@ -127,8 +127,10 @@ class Portfolio extends Component {
                                                         alt={post.title.rendered}
                                                         onLoad={(event, postID) => this.handleLoad(event, post.id)}
                                                     />
-
-                                                    <div className={portfolioStyles.content}>{date.getFullYear()}</div>
+                                                    <div className={portfolioStyles.content}>
+                                                        <span dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+                                                        <span><p>Date Created: {date.getFullYear()}</p></span>
+                                                    </div>
                                                 </a>
                                             </li>
                                         )

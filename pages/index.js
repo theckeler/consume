@@ -42,6 +42,7 @@ function Blog({ posts }) {
           <ul className="grid noload">
             {
               posts.map(post => {
+                const date = new Date(post.date)
                 return (
                   <li className={portfolioStyles.featured + ' ' + portfolioStyles.card} key={post.slug}>
                     <a href={post.link} target="_blank" data-caption={post.title.rendered}>
@@ -52,11 +53,16 @@ function Blog({ posts }) {
                         width={post._embedded["wp:featuredmedia"][0].media_details.width}
                         alt={post.title.rendered}
                         layout="responsive"
-                      />                      <span className={portfolioStyles.extlink}>
+                      />
+                      <span className={portfolioStyles.extlink}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                           <path d="M5 3c-1.093 0-2 .907-2 2v14c0 1.093.907 2 2 2h14c1.093 0 2-.907 2-2v-7h-2v7H5V5h7V3H5zm9 0v2h3.586l-9.293 9.293 1.414 1.414L19 6.414V10h2V3h-7z" />
                         </svg>
                       </span>
+                      <div className={portfolioStyles.content}>
+                        <span dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+                        <span><p>Date Created: {date.getFullYear()}</p></span>
+                      </div>
                     </a>
                   </li>
                 )

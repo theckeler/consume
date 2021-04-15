@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
-import Header from '../components/header'
-import Footer from '../components/footer'
-import styles from '../styles/About.module.css'
-import Meta from '../components/meta'
+import Header from '../../components/header'
+import Footer from '../../components/footer'
+import styles from '../../styles/About.module.css'
+import Meta from '../../components/meta'
 
 export async function getStaticProps() {
     const currentPage = "about"
