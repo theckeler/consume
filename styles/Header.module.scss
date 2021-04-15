@@ -17,11 +17,11 @@ body.active {
 
   &.active {
     .hamburger {
-      border-color: #0070f3;
+      border-color: $highlight-color;
       // background: #fff;
 
       li {
-        background: #0070f3;
+        background: $highlight-color;
 
         &:nth-of-type(1) {
           transform: rotate(-45deg) translate(-6px, 20px) scaleX(0.6);
@@ -85,7 +85,7 @@ body.active {
       transition: all 0.5s ease-in-out;
       transform-origin: left center;
       display: block;
-      background: #333;
+      background: $main-color;
       height: 4px;
       border-radius: 4px;
 
@@ -148,7 +148,7 @@ body.active {
 
         span {
           display: block;
-          background: #333;
+          background: $main-color;
           color: #fff;
         }
 

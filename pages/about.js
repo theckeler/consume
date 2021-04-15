@@ -73,7 +73,6 @@ function About(props) {
                     <li>HTML/HTML5</li>
                     <li>CSS/CSS3</li>
                     <li>SASS/LESS</li>
-                    <li>jQuery</li>
                     <li>UI</li>
                     <li>UX</li>
                     <li>Responsive Web Design</li>

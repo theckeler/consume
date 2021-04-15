@@ -15,10 +15,10 @@ body.active {
   background: #eeeeee;
 }
 .header.active .hamburger {
-  border-color: #0070f3;
+  border-color: #2769ca;
 }
 .header.active .hamburger li {
-  background: #0070f3;
+  background: #2769ca;
 }
 .header.active .hamburger li:nth-of-type(1) {
   -webkit-transform: rotate(-45deg) translate(-6px, 20px) scaleX(0.6);

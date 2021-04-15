@@ -28,7 +28,7 @@ body {
 }
 
 a {
-  color: #0070f3;
+  color: #2769ca;
   text-decoration: none;
 }
 a:hover, a:focus, a:active {
@@ -94,7 +94,7 @@ ul {
 
 .button {
   padding: 10px 20px;
-  background: #0070f3;
+  background: #2769ca;
   color: #fff;
   width: 100%;
   border-radius: 3px;
@@ -124,7 +124,7 @@ ul {
   padding: 0;
 }
 .nav ul li.svg a:hover svg {
-  fill: #0070f3;
+  fill: #2769ca;
 }
 .nav ul li.svg svg {
   width: 80%;
@@ -144,7 +144,7 @@ ul {
 .nav ul li a {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  color: #0070f3;
+  color: #2769ca;
   text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;

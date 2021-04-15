@@ -1,0 +1,18 @@
+.fancybox-container {
+    &.fancybox-is-open {
+        .fancybox-bg {
+            opacity: 1;
+            background: url(http://admin.consumedesign.com/wp-content/uploads/2021/04/photo-1515446134809-993c501ca304-1.jpg);
+            background-size: cover;
+        }
+    }
+
+    .fancybox-button,
+    .fancybox-toolbar {
+        background: $highlight-color;
+    }
+
+    .fancybox-content {
+        box-shadow: 0 0 100px #000;
+    }
+}
