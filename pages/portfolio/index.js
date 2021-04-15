@@ -113,7 +113,7 @@ class Portfolio extends Component {
                                     */
 
                                     if ('wp:featuredmedia' in post._embedded) {
-                                        console.log(post)
+                                        // console.log(post)
                                         return (
                                             <li className={portfolioStyles.card + ' card loading'} id={post.id} key={post.id} ref={ref[post.id]}>
 
