@@ -27,9 +27,9 @@ function About(props) {
             </section>
 
             <section className={'wrapper ' + styles.content}>
-                <p>Experienced Freelance Graphic Web Designer with a demonstrated history of working in the graphic design industry. Skilled in jQuery, JavaScript, CSS, HTML, Sass, Responsive Web Design, Web Design, Page Layout, and Cross-browser Compatibility. Strong arts and design professional with a Bachelor of Arts focused in Visual Communication & Design from Kent State University.</p>
+                <p>Experienced freelance graphic designer with a demonstrated history of working in the interactive design industry. Skilled in jQuery, JavaScript, CSS, HTML, Sass, Responsive Web Design, Web Design, Page Layout, and Cross-browser Compatibility. Strong arts and design professional with a Bachelor of Arts focused in Visual Communication & Design from Kent State University.</p>
 
-                <p>Freelance print design, website design, website UI, and website UX for local and national clients.</p>
+                <p>Provided print design, website design, website UX, website programming, and website UI for local and national clients.</p>
 
                 <p><strong>Current and past client list includes:</strong></p>
 
@@ -124,41 +124,28 @@ function About(props) {
             <section className={'wrapper grid ' + styles.exp}>
 
                 <ul>
-                    <li className={styles.title}>NAS Recruitment Innovation</li>
-                    <li>UI Developer</li>
-                    <li>Dates Employed: Aug 2019 – Present</li>
-                    <li>Q4-2020 Employee of the Quarter</li>
+                    <li className={styles.title}>Freelance Graphic Designer 12/1996 - Present</li>
+                    <li>
+                        <p>Provided print design, website design, website UX, website programming, and website UI for local and national clients.</p>
+                        <p><strong>Clients include:</strong> Alliance Bicycles, Bike Cleveland, Cleveland Film Society, Curt Goodrich Bicycles, Don Walker Cycles, Dream Hammock, Endless Bikes, Ibis Cycles, LiteAF, Kirk Frameworks, Modern Dog Design,Montana Fine Furniture, Mtn Air Roasting, Naked Bicycles &amp; Design, Nesnadny + Schwartz, North AmericanHandmade Bicycle Show, Pursuit Cycles, Rockgeist, Strong Frames, UGQ Outdoor, Werner Paddles</p>
+                    </li>
                 </ul>
 
                 <ul>
-                    <li className={styles.title}>Consume Design LLC</li>
-                    <li>Freelance Graphic & Web Designer</li>
-                    <li>Dates Employed: Dec 1997 – Present</li>
+                    <li className={styles.title}>UI Developer, NAS Recruitment Innovation 8/2019 - Present</li>
+                    <li>
+                        <p>Created and maintained C# HTML webpages in ASP.NET Razor using HTML, SASS, Javascript, and jQuery from provided comps, Developed a new BASE CSS for the NAS Active Platform, Implemented new scripting language, Created new processes for increased efficiency, <strong>Awarded Q4 2020 Employee of the Quarter.</strong></p>
+                        <p><strong>Clients include:</strong> Bahama Breeze, BigLots, Cinemark, Cheddar’s Scratch Kitchen, Clarivate, Darden SRG, DentWizard, Longhorn Steakhouse, Olive Garden, OU Medicine, Papa John’s, Red Lobster, ROSS, United Rentals, Value City Furniture</p>
+                    </li>
                 </ul>
 
-                <ul>
-                    <li className={styles.title}>DigitalDay</li>
-                    <li>Web Designer</li>
-                    <li>Dates Employed: Jun 2000 – Nov 2001</li>
-                </ul>
+                <ul><li className={styles.title}>DigitalDay</li><li>Interactive Designer</li><li>Dates Employed: Jun 2000 – Nov 2001</li></ul>
 
-                <ul>
-                    <li className={styles.title}>Digital Navigation</li>
-                    <li>Interactive Designer</li>
-                    <li>Dates Employed: Jul 1999 – Jul 2000</li>
-                </ul>
+                <ul><li className={styles.title}>Digital Navigation</li><li>Interactive Designer</li><li>Dates Employed: Jul 1999 – Jul 2000</li></ul>
 
-                <ul>
-                    <li className={styles.title}>Karen Skunta & Company</li>
-                    <li>Web Designer</li>
-                    <li>Dates Employed: Jun 1998 – Jun 1999</li>
-                </ul>
+                <ul><li className={styles.title}>Karen Skunta &amp; Company</li><li>Interactive Designer</li><li>Dates Employed: Jun 1998 – Jun 1999</li></ul>
 
-                <ul>
-                    <li className={styles.title}>Cleveland Live (cleveland.com)</li>
-                    <li>Web Designer</li>
-                    <li>Dates Employed: Jan 1997 – Jun 1998</li>
-                </ul>
+                <ul><li className={styles.title}>Cleveland Live (cleveland.com)</li><li>Interactive Designer</li><li>Dates Employed: Jan 1997 – Jun 1998</li></ul>
 
             </section>
 

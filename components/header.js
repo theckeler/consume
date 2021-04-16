@@ -17,17 +17,27 @@ const Header = (props) => (
     <header id="header" className={styles.header}>
         <div className={'wrapper ' + styles.wrapper}>
             <div className={styles.logo}>
-                <Link href="/">
-                    <a>
-                        <Image
-                            src="/images/logo.svg"
-                            height={80}
-                            width={300}
-                            alt="Consume Design"
-                            layout="responsive"
-                        />
-                    </a>
-                </Link>
+                {props.currentPage == 'home' ? (
+                    <Image
+                        src="/images/logo.svg"
+                        height={80}
+                        width={300}
+                        alt="Consume Design"
+                        layout="responsive"
+                    />) : (
+                    <Link href="/">
+                        <a>
+                            <Image
+                                src="/images/logo.svg"
+                                height={80}
+                                width={300}
+                                alt="Consume Design"
+                                layout="responsive"
+                            />
+                        </a>
+                    </Link>
+                )}
+
             </div>
             <Nav currentPage={props.currentPage} />
 
