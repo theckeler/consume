@@ -12,6 +12,13 @@
           box-shadow: 0 0 100px #000;
 }
 
+@font-face {
+  font-family: "Great Vibes";
+  src: url("/fonts/GreatVibes-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
 html,
 body {
   padding: 0;
