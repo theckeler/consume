@@ -1,34 +1,104 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## About
 
-## Getting Started
+For my personal website: [consume:design](https://www.consumedesign.com).
 
-First, run the development server:
+Experienced Freelance Graphic Web Designer with a demonstrated history of working in the graphic design industry. Skilled in jQuery, JavaScript, CSS, HTML, Sass, Responsive Web Design, Web Design, Page Layout, and Cross-browser Compatibility. Strong arts and design professional with a Bachelor of Arts focused in Visual Communication & Design from Kent State University.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Freelance print design, website design, website UI, and website UX for local and national clients.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Current and past client list includes:**
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- Alliance Bicycles
+- Bike Cleveland
+- Cleveland Film Society
+- Curt Goodrich Bicycles
+- Don Walker Cycles
+- Dream Hammock LLC
+- Endless Bikes
+- Ibis Cycles
+- LiteAF LLC
+- Kirk Frameworks
+- Modern Dog Design Co.
+- Montana Fine Furniture
+- Mtn Air Roasting
+- Naked Bicycles & Design
+- Nesnadny + Schwartz
+- North American Handmade Bicycle Show
+- Pursuit Cycles LLC
+- Rockgeist
+- Ruff Rollin’
+- Strong Frames, Inc.
+- UGQ Outdoor LLC
+- Valentine Distilling
+- Werner Paddles
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Skills
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+**Expertise in**
+- Backpacking
+- Mountain Biking
+- Camping
+- HTML/HTML5
+- CSS/CSS3
+- SASS/LESS
+- UI
+- UX
+- Responsive Web Design
+- Wordpress
+- Adobe Photoshop
+- Adobe Illustrator
+- Adobe InDesign
 
-## Learn More
+**Proficient in**
+- PHP
+- JavaScript
+- jQuery
+- SVG
+- Visual Studio
+- Visual Studio Code
 
-To learn more about Next.js, take a look at the following resources:
+**Experienced in**
+- Next.js
+- React
+- TypeScript
+- MySQL
+- JSON
+- AJAX
+- Git/Github
+- Web Accessibility Standards (WCAG)
+- Figma
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Knowlege of**
+- AngularJS
+- Python
+- ASP
+- Node.js
+- C#
+- REST API
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Experience
 
-## Deploy on Vercel
+NAS Recruitment Innovation
+UI Developer
+Dates Employed: Aug 2019 – Present
+Q4-2020 Employee of the Quarter
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Consume Design LLC
+Freelance Graphic & Web Designer
+Dates Employed: Dec 1997 – Present
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+DigitalDay
+Web Designer
+Dates Employed: Jun 2000 – Nov 2001
+
+Digital Navigation
+Interactive Designer
+Dates Employed: Jul 1999 – Jul 2000
+
+Karen Skunta & Company
+Web Designer
+Dates Employed: Jun 1998 – Jun 1999
+
+Cleveland Live (cleveland.com)
+Web Designer
+Dates Employed: Jan 1997 – Jun 1998
