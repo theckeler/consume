@@ -4,8 +4,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background: #fff;
 }
 
@@ -60,15 +59,28 @@ ul {
 
 .title {
   line-height: 1;
-  font-size: 44px;
+  font-size: 64px;
   color: #424242;
   text-align: center;
   padding-bottom: 0;
-  border-bottom: 1px solid #eeeeee;
   width: 100%;
-  text-transform: lowercase;
+  text-transform: capitalize;
   max-width: 1520px;
   padding: 0 40px;
+  position: relative;
+  font-family: #{$font-great-vibes};
+
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1px;
+    background: rgba($main-color, 0.2);
+  }
 }
 
 .section {

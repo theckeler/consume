@@ -15,6 +15,8 @@ const Meta = (props) => (
         <script type='text/javascript' src='/plugins/jquery-3.6.0.min.js'></script>
         <script type='text/javascript' src='/plugins/jquery.fancybox.min.js'></script>
         <link rel='stylesheet' href='/plugins/jquery.fancybox.min.css' type='text/css' media='' />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     </Head>
 
 )

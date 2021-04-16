@@ -71,7 +71,7 @@ body.active {
       justify-content: space-around;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  margin-left: auto;
+  margin: 0 0 0 auto;
   width: 40px;
   height: 40px;
   cursor: pointer;
