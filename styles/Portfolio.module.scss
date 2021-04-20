@@ -31,6 +31,7 @@
         &:active {
             color: $highlight-color;
             border-color: $highlight-color;
+            background: $highlight-color;
 
             .content,
             strong {

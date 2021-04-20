@@ -27,6 +27,7 @@
 .card > a:hover, .card > a:focus, .card > a:active {
   color: #09649c;
   border-color: #09649c;
+  background: #09649c;
 }
 .card > a:hover .content,
 .card > a:hover strong, .card > a:focus .content,
