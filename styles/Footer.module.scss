@@ -1,15 +1,14 @@
 @import "mixins";
 
 .footer {
-  border-bottom: 1px solid #eaeaea;
+  border-top: 4px solid #eaeaea;
   width: 100%;
   position: relative;
   top: 0;
   font-weight: 700;
-  padding: 10px 0;
+  padding: 10px 0 60px 0;
   overflow: hidden;
-  background: #eeeeee;
-  margin-top: 60px;
+  background: #{$gradient};
 
   .wrapper {
     display: flex;

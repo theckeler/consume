@@ -1,13 +1,13 @@
 .footer {
-  border-bottom: 1px solid #eaeaea;
+  border-top: 4px solid #eaeaea;
   width: 100%;
   position: relative;
   top: 0;
   font-weight: 700;
-  padding: 10px 0;
+  padding: 10px 0 60px 0;
   overflow: hidden;
-  background: #eeeeee;
-  margin-top: 60px;
+  background: -webkit-gradient(linear, left top, right top, from(#e4f4fe), color-stop(45%, #f5f9fb), to(#eeeeee));
+  background: linear-gradient(to right, #e4f4fe 0%, #f5f9fb 45%, #eeeeee 100%);
 }
 .footer .wrapper {
   display: -webkit-box;

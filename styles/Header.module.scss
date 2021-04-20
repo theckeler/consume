@@ -5,7 +5,7 @@ body.active {
 }
 
 .header {
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 4px solid rgba($main-color, 0.2);
   width: 100%;
   position: sticky;
   z-index: 1001;
@@ -13,12 +13,11 @@ body.active {
   font-weight: 700;
   padding: 10px 0;
   overflow: hidden;
-  background: #eeeeee;
+  background: #{$gradient};
 
   &.active {
     .hamburger {
       border-color: $highlight-color;
-      // background: #fff;
 
       li {
         background: $highlight-color;
