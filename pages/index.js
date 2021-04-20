@@ -40,6 +40,7 @@ function Blog({ posts }) {
         <div className={'wrapper ' + portfolioStyles.wrapper}>
 
           <ul className="grid noload">
+            {console.log(posts)}
             {
               posts.map(post => {
                 const date = new Date(post.date)

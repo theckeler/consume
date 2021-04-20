@@ -1,7 +1,6 @@
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import Meta from '../../components/meta'
-import axios from 'axios'
 import React, { Component } from 'react'
 import portfolioStyles from '../../styles/Portfolio.module.css'
 import Image from 'next/image'
@@ -10,42 +9,108 @@ class Portfolio extends Component {
     constructor() {
         super();
         this.state = {
-            wpPage: 1,
             posts: [],
-            outputPosts: [],
-            scrollToThis: null,
-            postCount: 0,
-            postCheck: []
+            hasNextPage: true,
+            endCursor: [],
+            startCursor: [],
         };
     }
 
     componentWillMount() {
-        this.getPosts(1)
+        // console.log('componentWillMount')
+        //this.getPosts()
     }
 
-    getPosts = (wpPage) => {
-        const url = 'https://admin.consumedesign.com/wp-json/wp/v2/posts/?categories=15&per_page=100&_embed';
+    componentDidMount() {
+        //  console.log('componentDidMount')
+        var options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 1.0
+        };
+        this.observer = new IntersectionObserver(
+            this.handleObserver.bind(this),
+            options
+        );
+        this.observer.observe(this.loadingRef);
+    }
 
-        axios.get(url)
+    handleObserver(entities, observer) {
+        // console.log('handleObserver')
+        //  console.log(entities[0].target)
+        //console.log(entities[0].intersectionRatio)
+
+        if (entities[0].intersectionRatio && this.state.hasNextPage == true) {
+            //  console.log('load more')
+            this.getPosts()
+            //  observer.unobserve(entities[0].target);
+        }
+    }
+
+    getPosts = () => {
+
+        // console.log('getPosts')
+        // console.log(this.state.startCursor)
+
+        fetch('https://admin.consumedesign.com/graphql', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                query: `
+query MyQuery {
+  posts(where: {categoryId: 15}, first: 12, after: "${this.state.endCursor}") {
+    pageInfo {
+      hasNextPage
+      endCursor
+      startCursor
+    }
+    edges {
+      node {
+        id
+        title
+        content
+        dateGmt
+        link
+        featuredImage {
+          node {
+            srcSet
+            sourceUrl
+            mediaDetails {
+              height
+              width
+            }
+          }
+        }
+        categories {
+          nodes {
+            categoryId
+          }
+        }
+      }
+    }
+  }
+}
+    `,
+            }),
+        })
+            .then(response => response.json())
             .then(response => {
-                const outputPosts = [...this.state.outputPosts, ...response.data]
+                //console.log(response.data)
 
                 this.setState({
-                    outputPosts: outputPosts,
-                    wpPage: (wpPage + 1),
-                    posts: response.data,
-                    scrollToThis: response.data[0].slug,
-                    postCount: outputPosts.length + 1,
+                    posts: [...this.state.posts, ...response.data.posts.edges],
+                    // posts: response.data.posts.edges,
+                    hasNextPage: response.data.posts.pageInfo.hasNextPage,
+                    endCursor: response.data.posts.pageInfo.endCursor,
+                    startCursor: response.data.posts.pageInfo.startCursor,
                 })
 
-            })
-            .then(response => {
+                // console.log(this.state)
+
                 document.getElementById("portfolio-main").classList.add("active");
-                document.getElementById("portfolio-button").classList.add("active");
                 document.getElementById("portfolio-container").classList.remove("loading");
-            })
-            .catch(error => {
-                document.getElementById("portfolio-button").classList.remove("active");
             })
     }
 
@@ -61,25 +126,6 @@ class Portfolio extends Component {
                 ],
             }
         });
-    }
-
-
-    loadMore = (postCount) => {
-        //e.preventDefault()
-        this.getPosts(this.state.wpPage)
-        //const scrollToMe = '#' + this.state.scrollToThis
-        // console.log(postCount)
-
-        document.getElementById("portfolio-main").classList.remove("active")
-        document.getElementById("portfolio-button").classList.remove("active")
-        document.getElementById("portfolio-container").classList.add("loading")
-        //this.refs[i].scrollIntoView({ block: 'end', behavior: 'smooth' });
-        //  window.scrollTo(0, topHight);
-    }
-
-    handleLoad = (e, postID) => {
-        //e.classList.remove("loading")
-        document.getElementById(postID).classList.remove("loading");
     }
 
     render() {
@@ -98,53 +144,37 @@ class Portfolio extends Component {
 
                         <ul className="grid" id="portfolio-main">
                             {
-                                this.state.outputPosts.map(post => {
-                                    const ref = React.createRef();
-                                    const postID = post.id
+                                this.state.posts.map(post => {
+                                    const thisPost = post.node;
+                                    const date = new Date(thisPost.dateGmt)
+                                    //console.log(thisPost)
 
-                                    const date = new Date(post.date)
-                                    // console.log(date)
-                                    /*
-                                    const content = post.content.rendered;
-                                    {
-                                        content.length > 0 &&
-                                        <div className={portfolioStyles.content} dangerouslySetInnerHTML={{ __html: content }} />
-                                    }
-                                    */
-
-                                    if ('wp:featuredmedia' in post._embedded) {
-                                        // console.log(post)
+                                    if (thisPost) {
                                         return (
-                                            <li className={portfolioStyles.card + ' card loading'} id={post.id} key={post.id} ref={ref[post.id]}>
-
-                                                <a className={portfolioStyles.anchor} name={post.slug} id={post.slug}></a>
-                                                <a onClick={this.handleClick} href={post._embedded['wp:featuredmedia']['0'].source_url} data-caption={post.title.rendered}>
-                                                    <strong dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+                                            <li
+                                                className={portfolioStyles.card + ' card loading'}
+                                                key={thisPost.id}
+                                            >
+                                                <a onClick={this.handleClick} href={thisPost.featuredImage.node.sourceUrl}>
+                                                    <strong dangerouslySetInnerHTML={{ __html: thisPost.title }} />
                                                     <Image
-                                                        src={post._embedded['wp:featuredmedia']['0'].source_url}
-                                                        height={post._embedded["wp:featuredmedia"][0].media_details.height}
-                                                        width={post._embedded["wp:featuredmedia"][0].media_details.width}
-                                                        alt={post.title.rendered}
-                                                        onLoad={(event, postID) => this.handleLoad(event, post.id)}
+                                                        src={thisPost.featuredImage.node.sourceUrl}
+                                                        height={thisPost.featuredImage.node.mediaDetails.height}
+                                                        width={thisPost.featuredImage.node.mediaDetails.width}
+                                                        alt={thisPost.title}
                                                     />
                                                     <div className={portfolioStyles.content}>
-                                                        <span dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+                                                        <span dangerouslySetInnerHTML={{ __html: thisPost.content }} />
                                                         <span><p>Date Created: {date.getFullYear()}</p></span>
                                                     </div>
                                                 </a>
                                             </li>
                                         )
-                                    } else {
-                                        return (
-                                            <li className="hidden" key={post.id} ref={ref[post.id]}>
-                                                <a></a>
-                                            </li>
-                                        )
                                     }
                                 })
                             }
+                            <div className="observer" ref={loadingRef => (this.loadingRef = loadingRef)} />
                         </ul>
-                        <a id="portfolio-button" onClick={this.loadMore.bind(this, this.state.postCount)} page={this.state.wpPage} className="hidden button">Load More</a>
                     </div>
 
                 </section>
@@ -152,11 +182,6 @@ class Portfolio extends Component {
                 <Footer currentPage="portfolio"></Footer>
             </>
         )
-    }
-
-
-    componentDidMount(props) {
-
     }
 }
 
