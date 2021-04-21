@@ -197,54 +197,50 @@ a {
 .loading {
   position: relative;
 
-  &.page {
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation-name: loadme;
+    animation-iteration-count: infinite;
+    transform-origin: center;
+  }
 
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      animation-name: loadme;
-      animation-iteration-count: infinite;
-      transform-origin: center;
-    }
+  &:before {
+    width: 40px;
+    height: 40px;
+    border: 6px solid $main-color;
+    border-radius: 50%;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    border-top-color: transparent;
+  }
+
+  &:after {
+    width: 100px;
+    height: 100px;
+    border: 2px solid $main-color;
+    border-radius: 50%;
+    animation-duration: 0.5s;
+    border-bottom-color: transparent;
+  }
+
+  &.observer {
+    min-height: 100px;
+    width: 100%;
 
     &:before {
-      width: 40px;
-      height: 40px;
-      border: 6px solid $main-color;
-      border-radius: 50%;
-      animation-duration: 1s;
-      animation-delay: 0s;
-      border-top-color: transparent;
+      width: 10px;
+      height: 10px;
+
     }
 
     &:after {
-      width: 100px;
-      height: 100px;
-      border: 3px solid $main-color;
-      border-radius: 50%;
-      animation-duration: 0.5s;
-      border-bottom-color: transparent;
+      width: 50px;
+      height: 50px;
     }
-  }
-
-  &.card {
-    a {
-      position: relative;
-    }
-  }
-}
-
-.load {
-  min-height: 50vh;
-  max-height: 10000vh;
-  transition: max-height 0.2s ease-in-out;
-
-  &.loading {
-    min-height: 50vh;
-    max-height: 50vh;
   }
 }
 
@@ -288,8 +284,17 @@ a {
   }
 }
 
+@media (max-width: 1200px) {
+  #portfolio-main.grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
 @media (max-width: 992px) {
-  .grid {
+
+  .grid,
+  #portfolio-main.grid {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -300,7 +305,8 @@ a {
     width: 0;
   }
 
-  .grid {
+  .grid,
+  #portfolio-main.grid {
     grid-template-columns: 1fr;
   }
 }

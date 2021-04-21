@@ -13,16 +13,14 @@ class Portfolio extends Component {
             hasNextPage: true,
             endCursor: [],
             startCursor: [],
+            loading: [],
         };
     }
 
     componentWillMount() {
-        // console.log('componentWillMount')
-        //this.getPosts()
     }
 
     componentDidMount() {
-        //  console.log('componentDidMount')
         var options = {
             root: null,
             rootMargin: "0px",
@@ -36,22 +34,14 @@ class Portfolio extends Component {
     }
 
     handleObserver(entities, observer) {
-        // console.log('handleObserver')
-        //  console.log(entities[0].target)
-        //console.log(entities[0].intersectionRatio)
-
         if (entities[0].intersectionRatio && this.state.hasNextPage == true) {
-            //  console.log('load more')
             this.getPosts()
-            //  observer.unobserve(entities[0].target);
+            //debugger
         }
     }
 
     getPosts = () => {
-
-        // console.log('getPosts')
-        // console.log(this.state.startCursor)
-
+        document.getElementById("observer").classList.add("loading");
         fetch('https://admin.consumedesign.com/graphql', {
             method: 'POST',
             headers: {
@@ -97,19 +87,13 @@ query MyQuery {
         })
             .then(response => response.json())
             .then(response => {
-                //console.log(response.data)
-
                 this.setState({
                     posts: [...this.state.posts, ...response.data.posts.edges],
-                    // posts: response.data.posts.edges,
                     hasNextPage: response.data.posts.pageInfo.hasNextPage,
                     endCursor: response.data.posts.pageInfo.endCursor,
                     startCursor: response.data.posts.pageInfo.startCursor,
+                    loading: true,
                 })
-
-                // console.log(this.state)
-
-                document.getElementById("portfolio-main").classList.add("active");
                 document.getElementById("portfolio-container").classList.remove("loading");
             })
     }
@@ -141,19 +125,18 @@ query MyQuery {
                     </section>
 
                     <section className={portfolioStyles.section}>
-                        <div id="portfolio-container" className={'load page loading wrapper '}>
+                        <div id="portfolio-container" className={' wrapper'}>
 
                             <ul className="grid" id="portfolio-main">
                                 {
                                     this.state.posts.map(post => {
                                         const thisPost = post.node;
                                         const date = new Date(thisPost.dateGmt)
-                                        //console.log(thisPost)
 
                                         if (thisPost) {
                                             return (
                                                 <li
-                                                    className={portfolioStyles.card + ' card loading'}
+                                                    className={portfolioStyles.card + ' card'}
                                                     key={thisPost.id}
                                                 >
                                                     <a onClick={this.handleClick} href={thisPost.featuredImage.node.sourceUrl}>
@@ -174,8 +157,8 @@ query MyQuery {
                                         }
                                     })
                                 }
-                                <div className="observer" ref={loadingRef => (this.loadingRef = loadingRef)} />
                             </ul>
+                            <div id="observer" className="observer" ref={loadingRef => (this.loadingRef = loadingRef)} />
                         </div>
                     </section>
                 </div>

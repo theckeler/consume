@@ -8,21 +8,50 @@ import Image from 'next/image'
 
 
 export async function getStaticProps() {
-  const response = await axios.get('https://admin.consumedesign.com/wp-json/wp/v2/posts/?categories=43&_embed&per_page=8')
+  const response = await axios({
+    url: 'https://admin.consumedesign.com/graphql',
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: {
+      query: `
+      query MyQuery {
+  posts(where: {categoryId: 43}) {
+    edges {
+      node {
+        id
+        title
+        content
+        dateGmt
+        link
+        featuredImage {
+          node {
+            srcSet
+            sourceUrl
+            mediaDetails {
+              height
+              width
+            }
+          }
+        }
+      }
+    }
+  }
+}
+      `
+    }
+  })
+
+  // debugger
 
   return {
     props: {
-      wpPage: 1,
-      posts: response.data,
-      outputPosts: response.data,
-      scrollToThis: null,
-      postCount: 0,
-      postCheck: []
+      posts: response.data.data.posts.edges,
     },
   }
+
 }
-
-
 
 function Blog({ posts }) {
 
@@ -43,17 +72,21 @@ function Blog({ posts }) {
             <ul className="grid noload">
               {
                 posts.map(post => {
-                  const date = new Date(post.date)
+                  const thisPost = post.node;
+                  const date = new Date(thisPost.dateGmt)
+                  //console.log(thisPost)
                   return (
-                    <li className={portfolioStyles.featured + ' ' + portfolioStyles.card} key={post.slug}>
-                      <a href={post.link} target="_blank" data-caption={post.title.rendered}>
-                        <strong>{post.title.rendered}</strong>
+                    <li
+                      className={portfolioStyles.card + ' ' + portfolioStyles.featured + ' card'}
+                      key={thisPost.id}
+                    >
+                      <a href={thisPost.link} target="_new">
+                        <strong dangerouslySetInnerHTML={{ __html: thisPost.title }} />
                         <Image
-                          src={post._embedded['wp:featuredmedia']['0'].source_url}
-                          height={post._embedded["wp:featuredmedia"][0].media_details.height}
-                          width={post._embedded["wp:featuredmedia"][0].media_details.width}
-                          alt={post.title.rendered}
-                          layout="responsive"
+                          src={thisPost.featuredImage.node.sourceUrl}
+                          height={thisPost.featuredImage.node.mediaDetails.height}
+                          width={thisPost.featuredImage.node.mediaDetails.width}
+                          alt={thisPost.title}
                         />
                         <span className={portfolioStyles.extlink}>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -61,7 +94,7 @@ function Blog({ posts }) {
                           </svg>
                         </span>
                         <div className={portfolioStyles.content}>
-                          <span dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+                          <span dangerouslySetInnerHTML={{ __html: thisPost.content }} />
                           <span><p>Date Created: {date.getFullYear()}</p></span>
                         </div>
                       </a>
