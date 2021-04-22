@@ -28,11 +28,17 @@ export async function getStaticProps() {
         featuredImage {
           node {
             srcSet
-            sourceUrl
+            sourceUrl(size: MEDIUM)
             mediaDetails {
               height
               width
             }
+            mediaItemUrl
+          }
+        }
+        categories {
+          nodes {
+            categoryId
           }
         }
       }
@@ -82,8 +88,9 @@ function Blog({ posts }) {
                     >
                       <a href={thisPost.link} target="_new">
                         <strong dangerouslySetInnerHTML={{ __html: thisPost.title }} />
-                        <Image
+                        <img
                           src={thisPost.featuredImage.node.sourceUrl}
+                          srcSet={thisPost.featuredImage.node.srcSet}
                           height={thisPost.featuredImage.node.mediaDetails.height}
                           width={thisPost.featuredImage.node.mediaDetails.width}
                           alt={thisPost.title}

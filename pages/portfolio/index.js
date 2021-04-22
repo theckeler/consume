@@ -36,7 +36,7 @@ class Portfolio extends Component {
     handleObserver(entities, observer) {
         if (entities[0].intersectionRatio && this.state.hasNextPage == true) {
             this.getPosts()
-            //debugger
+            debugger
         }
     }
 
@@ -65,12 +65,18 @@ query MyQuery {
         link
         featuredImage {
           node {
-            srcSet
-            sourceUrl
+            sourceUrl(size: MEDIUM)
             mediaDetails {
               height
               width
+              sizes {
+                height
+                width
+                name
+              }
             }
+            mediaItemUrl
+            srcSet
           }
         }
         categories {
@@ -94,7 +100,7 @@ query MyQuery {
                     startCursor: response.data.posts.pageInfo.startCursor,
                     loading: true,
                 })
-                document.getElementById("portfolio-container").classList.remove("loading");
+                //document.getElementById("portfolio-container").classList.remove("loading");
             })
     }
 
@@ -132,6 +138,11 @@ query MyQuery {
                                     this.state.posts.map(post => {
                                         const thisPost = post.node;
                                         const date = new Date(thisPost.dateGmt)
+                                        console.log(thisPost)
+
+                                        const mediumImg = thisPost.featuredImage.node.mediaDetails.sizes.find(({ name }) => name === 'medium');
+                                        console.log(mediumImg)
+
 
                                         if (thisPost) {
                                             return (
@@ -139,12 +150,13 @@ query MyQuery {
                                                     className={portfolioStyles.card + ' card'}
                                                     key={thisPost.id}
                                                 >
-                                                    <a onClick={this.handleClick} href={thisPost.featuredImage.node.sourceUrl}>
+                                                    <a onClick={this.handleClick} href={thisPost.featuredImage.node.mediaItemUrl}>
                                                         <strong dangerouslySetInnerHTML={{ __html: thisPost.title }} />
-                                                        <Image
+                                                        <img
                                                             src={thisPost.featuredImage.node.sourceUrl}
-                                                            height={thisPost.featuredImage.node.mediaDetails.height}
-                                                            width={thisPost.featuredImage.node.mediaDetails.width}
+                                                            srcSet={thisPost.featuredImage.node.srcSet}
+                                                            height={mediumImg.height}
+                                                            width={mediumImg.width}
                                                             alt={thisPost.title}
                                                         />
                                                         <div className={portfolioStyles.content}>
@@ -158,7 +170,7 @@ query MyQuery {
                                     })
                                 }
                             </ul>
-                            <div id="observer" className="observer" ref={loadingRef => (this.loadingRef = loadingRef)} />
+                            <div id="observer" className={this.state.hasNextPage === true ? "observer loading" : "none"} ref={loadingRef => (this.loadingRef = loadingRef)} />
                         </div>
                     </section>
                 </div>

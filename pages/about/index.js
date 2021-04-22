@@ -128,7 +128,7 @@ function About(props) {
                         <li className={styles.title}>Freelance Graphic Designer 12/1996 - Present</li>
                         <li>
                             <p>Provided print design, website design, website UX, website programming, and website UI for local and national clients.</p>
-                            <p><strong>Clients include:</strong> Alliance Bicycles, Bike Cleveland, Cleveland Film Society, Curt Goodrich Bicycles, Don Walker Cycles, Dream Hammock, Endless Bikes, Ibis Cycles, LiteAF, Kirk Frameworks, Modern Dog Design,Montana Fine Furniture, Mtn Air Roasting, Naked Bicycles &amp; Design, Nesnadny + Schwartz, North AmericanHandmade Bicycle Show, Pursuit Cycles, Rockgeist, Strong Frames, UGQ Outdoor, Werner Paddles</p>
+                            <p><strong>Clients include:</strong> Alliance Bicycles, Bike Cleveland, Cleveland Film Society, Curt Goodrich Bicycles, Don Walker Cycles, Dream Hammock, Endless Bikes, Ibis Cycles, LiteAF, Kirk Frameworks, Modern Dog Design, Montana Fine Furniture, Mtn Air Roasting, Naked Bicycles &amp; Design, Nesnadny + Schwartz, North AmericanHandmade Bicycle Show, Pursuit Cycles, Rockgeist, Strong Frames, UGQ Outdoor, Werner Paddles</p>
                         </li>
                     </ul>
 

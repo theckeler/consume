@@ -37,16 +37,10 @@
   background: #09649c;
   color: #fff;
 }
-.card > a .img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
 .card > a img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 .card > a strong {
   display: block;

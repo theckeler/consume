@@ -41,13 +41,10 @@
             }
         }
 
-        .img {
-            display: flex;
-            justify-content: center;
-        }
-
         img {
             display: block;
+            width: 100%;
+            height: auto;
         }
 
         strong {
