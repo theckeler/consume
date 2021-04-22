@@ -138,10 +138,10 @@ query MyQuery {
                                     this.state.posts.map(post => {
                                         const thisPost = post.node;
                                         const date = new Date(thisPost.dateGmt)
-                                        console.log(thisPost)
+                                        //console.log(thisPost)
 
                                         const mediumImg = thisPost.featuredImage.node.mediaDetails.sizes.find(({ name }) => name === 'medium');
-                                        console.log(mediumImg)
+                                        // console.log(mediumImg)
 
 
                                         if (thisPost) {
@@ -152,7 +152,7 @@ query MyQuery {
                                                 >
                                                     <a onClick={this.handleClick} href={thisPost.featuredImage.node.mediaItemUrl}>
                                                         <strong dangerouslySetInnerHTML={{ __html: thisPost.title }} />
-                                                        <img
+                                                        <Image
                                                             src={thisPost.featuredImage.node.sourceUrl}
                                                             srcSet={thisPost.featuredImage.node.srcSet}
                                                             height={mediumImg.height}

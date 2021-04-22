@@ -88,7 +88,7 @@ function Blog({ posts }) {
                     >
                       <a href={thisPost.link} target="_new">
                         <strong dangerouslySetInnerHTML={{ __html: thisPost.title }} />
-                        <img
+                        <Image
                           src={thisPost.featuredImage.node.sourceUrl}
                           srcSet={thisPost.featuredImage.node.srcSet}
                           height={thisPost.featuredImage.node.mediaDetails.height}
