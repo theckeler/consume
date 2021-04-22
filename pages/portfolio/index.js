@@ -36,7 +36,7 @@ class Portfolio extends Component {
     handleObserver(entities, observer) {
         if (entities[0].intersectionRatio && this.state.hasNextPage == true) {
             this.getPosts()
-            debugger
+            //  debugger
         }
     }
 
