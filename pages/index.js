@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 import portfolioStyles from '../styles/Portfolio.module.css'
 import axios from 'axios'
 import Image from 'next/image'
-
+import Card from '../components/card'
 
 export async function getStaticProps() {
   const response = await axios({
@@ -80,32 +80,11 @@ function Blog({ posts }) {
                 posts.map(post => {
                   const thisPost = post.node;
                   const date = new Date(thisPost.dateGmt)
+                  const mediumImg = '';
                   //console.log(thisPost)
+
                   return (
-                    <li
-                      className={portfolioStyles.card + ' ' + portfolioStyles.featured + ' card'}
-                      key={thisPost.id}
-                    >
-                      <a href={thisPost.link} target="_new">
-                        <strong dangerouslySetInnerHTML={{ __html: thisPost.title }} />
-                        <Image
-                          src={thisPost.featuredImage.node.sourceUrl}
-                          srcSet={thisPost.featuredImage.node.srcSet}
-                          height={thisPost.featuredImage.node.mediaDetails.height}
-                          width={thisPost.featuredImage.node.mediaDetails.width}
-                          alt={thisPost.title}
-                        />
-                        <span className={portfolioStyles.extlink}>
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M5 3c-1.093 0-2 .907-2 2v14c0 1.093.907 2 2 2h14c1.093 0 2-.907 2-2v-7h-2v7H5V5h7V3H5zm9 0v2h3.586l-9.293 9.293 1.414 1.414L19 6.414V10h2V3h-7z" />
-                          </svg>
-                        </span>
-                        <div className={portfolioStyles.content}>
-                          <span dangerouslySetInnerHTML={{ __html: thisPost.content }} />
-                          <span><p>Date Created: {date.getFullYear()}</p></span>
-                        </div>
-                      </a>
-                    </li>
+                    <Card featured="1" key={thisPost.id} mediumImg={mediumImg} date={date} thisPost={thisPost} />
                   )
                 })
               }

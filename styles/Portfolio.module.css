@@ -25,14 +25,13 @@
   overflow: hidden;
   border: 0;
 }
-.card > a:hover, .card > a:focus, .card > a:active {
+.card > a:hover, .card > a:active {
   color: #09649c;
   border-color: #09649c;
   background: #09649c;
 }
 .card > a:hover .content,
-.card > a:hover strong, .card > a:focus .content,
-.card > a:focus strong, .card > a:active .content,
+.card > a:hover strong, .card > a:active .content,
 .card > a:active strong {
   background: #09649c;
   color: #fff;

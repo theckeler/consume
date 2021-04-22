@@ -1,5 +1,6 @@
 import Header from '../../components/header'
 import Footer from '../../components/footer'
+import Card from '../../components/card'
 import Meta from '../../components/meta'
 import React, { Component } from 'react'
 import portfolioStyles from '../../styles/Portfolio.module.css'
@@ -104,20 +105,6 @@ query MyQuery {
             })
     }
 
-
-    handleClick = (e) => {
-        e.preventDefault()
-        $.fancybox.open({
-            src: e.currentTarget.href,
-            opts: {
-                clickContent: false,
-                buttons: [
-                    "close"
-                ],
-            }
-        });
-    }
-
     render() {
         return (
             <>
@@ -138,33 +125,16 @@ query MyQuery {
                                     this.state.posts.map(post => {
                                         const thisPost = post.node;
                                         const date = new Date(thisPost.dateGmt)
-                                        //console.log(thisPost)
 
-                                        const mediumImg = thisPost.featuredImage.node.mediaDetails.sizes.find(({ name }) => name === 'medium');
-                                        // console.log(mediumImg)
+                                        var featured = thisPost.categories.nodes.find(function (value, index) {
+                                            return value.categoryId == 43
+                                        });
 
+                                        const mediumImg = thisPost.categories.nodes.find(({ name }) => name === 'medium');
 
                                         if (thisPost) {
                                             return (
-                                                <li
-                                                    className={portfolioStyles.card + ' card'}
-                                                    key={thisPost.id}
-                                                >
-                                                    <a onClick={this.handleClick} href={thisPost.featuredImage.node.mediaItemUrl}>
-                                                        <strong dangerouslySetInnerHTML={{ __html: thisPost.title }} />
-                                                        <Image
-                                                            src={thisPost.featuredImage.node.sourceUrl}
-                                                            srcSet={thisPost.featuredImage.node.srcSet}
-                                                            height={mediumImg.height}
-                                                            width={mediumImg.width}
-                                                            alt={thisPost.title}
-                                                        />
-                                                        <div className={portfolioStyles.content}>
-                                                            <span dangerouslySetInnerHTML={{ __html: thisPost.content }} />
-                                                            <span><p>Date Created: {date.getFullYear()}</p></span>
-                                                        </div>
-                                                    </a>
-                                                </li>
+                                                <Card key={thisPost.id} featured={featured} mediumImg={mediumImg} date={date} thisPost={thisPost} />
                                             )
                                         }
                                     })
