@@ -1,11 +1,10 @@
 {
-	/*
     "version": "2.0.0",
     "tasks": [
         {
             "label": "Connect to DH",
             "type": "shell",
-            "command": "ssh dh_e8yc7c@nas.dreamhosters.com",
+            "command": "ssh consume@admin.consumedesign.com",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -13,5 +12,5 @@
             }
         }
     ]
-	*/
+	
 }
