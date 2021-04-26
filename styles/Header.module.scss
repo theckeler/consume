@@ -113,6 +113,10 @@ body.active {
 @media (max-width: 992px) {
   .header {
 
+    .wrapper {
+      padding: 0 10px;
+    }
+
     .logo {
       z-index: 101;
       position: relative;
@@ -126,7 +130,7 @@ body.active {
       height: 100vh;
       background: #fff;
       z-index: 100;
-      padding: 80px 20px 20px 20px;
+      padding: 80px 10px 10px 10px;
 
       ul {
         border-top: 1px solid #eeeeee;
@@ -155,7 +159,7 @@ body.active {
           flex-direction: row;
 
           li {
-            max-width: 60px;
+            max-width: 40px;
           }
         }
       }

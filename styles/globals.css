@@ -168,8 +168,8 @@ ul {
   fill: #09649c;
 }
 .nav ul li.svg svg {
-  width: 80%;
-  max-width: 40px;
+  width: 100%;
+  max-width: 28px;
   height: auto;
 }
 .nav ul li.svg svg * {
@@ -321,6 +321,10 @@ a {
   }
 }
 @media (max-width: 992px) {
+  .wrapper {
+    padding: 0 10px;
+  }
+
   .grid,
 #portfolio-main.grid {
     grid-template-columns: 1fr 1fr;
