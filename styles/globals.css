@@ -159,10 +159,13 @@ ul {
           align-items: center;
 }
 .nav ul li {
-  margin: 0 2px;
+  margin: 0;
 }
 .nav ul li.svg a {
   padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .nav ul li.svg a:hover svg {
   fill: #09649c;
@@ -328,6 +331,10 @@ a {
   .grid,
 #portfolio-main.grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .nav ul li.svg svg {
+    max-width: 34px;
   }
 }
 @media (max-width: 768px) {

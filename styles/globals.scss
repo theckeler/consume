@@ -134,11 +134,12 @@ ul {
     align-items: center;
 
     li {
-      margin: 0 2px;
+      margin: 0;
 
       &.svg {
         a {
           padding: 0;
+          justify-content: center;
 
           &:hover {
             svg {
@@ -299,6 +300,10 @@ a {
   .grid,
   #portfolio-main.grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .nav ul li.svg svg {
+    max-width: 34px;
   }
 }
 
