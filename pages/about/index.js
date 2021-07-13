@@ -140,7 +140,7 @@ function About(props) {
                     </ul>
 
                     <ul>
-                        <li className={styles.title}>UI Developer, NAS Recruitment Innovation 8/2019 - Present</li>
+                        <li className={styles.title}>UI Developer, NAS Recruitment Innovation 8/2019 - 7/2021</li>
                         <li>
                             <p>Created and maintained C# HTML webpages in ASP.NET Razor using HTML, SASS, Javascript, and jQuery from provided comps, Developed a new BASE CSS for the NAS Active Platform, Implemented new scripting language, Created new processes for increased efficiency, <strong>Awarded Q4 2020 Employee of the Quarter.</strong></p>
                             <p><strong>Clients include:</strong> Bahama Breeze, BigLots, Cinemark, Cheddar’s Scratch Kitchen, Clarivate, Darden SRG, DentWizard, Longhorn Steakhouse, Olive Garden, OU Medicine, Papa John’s, Red Lobster, ROSS, United Rentals, Value City Furniture</p>
