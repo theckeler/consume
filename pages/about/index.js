@@ -133,6 +133,13 @@ function About(props) {
                     </ul>
 
                     <ul>
+                        <li className={styles.title}>UX/UI Graphic Designer, MTD Products 7/2021- Present</li>
+                        <li>
+                            <p><strong>Clients include:</strong> Cub Cadet, Troy-Bilt, Rover, MTD Genuine Parts, WOLF-Garten, Yard Machines</p>
+                        </li>
+                    </ul>
+
+                    <ul>
                         <li className={styles.title}>UI Developer, NAS Recruitment Innovation 8/2019 - Present</li>
                         <li>
                             <p>Created and maintained C# HTML webpages in ASP.NET Razor using HTML, SASS, Javascript, and jQuery from provided comps, Developed a new BASE CSS for the NAS Active Platform, Implemented new scripting language, Created new processes for increased efficiency, <strong>Awarded Q4 2020 Employee of the Quarter.</strong></p>
