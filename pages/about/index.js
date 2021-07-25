@@ -91,6 +91,7 @@ function About(props) {
                         <li>SVG</li>
                         <li>Visual Studio</li>
                         <li>Visual Studio Code</li>
+                        <li>Adobe XD</li>
                     </ul>
 
                     <p>Experienced in</p>
