@@ -12,7 +12,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
   background: #{$gradient};
 }
 
@@ -80,7 +81,7 @@ ul {
   margin: 0;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 16px;
     left: 50%;
@@ -155,7 +156,6 @@ ul {
 
           * {
             transition: all 0.3s ease-in-out;
-
           }
         }
       }
@@ -200,7 +200,7 @@ a {
 
   &:before,
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -235,7 +235,6 @@ a {
     &:before {
       width: 10px;
       height: 10px;
-
     }
 
     &:after {
@@ -246,7 +245,6 @@ a {
 }
 
 #portfolio-main {
-
   .grid,
   .button {
     transition: opacity 0.2s ease-in-out;
@@ -258,7 +256,6 @@ a {
 }
 
 .noload {
-
   .grid,
   .button {
     opacity: 1;
@@ -291,7 +288,6 @@ a {
   }
 }
 
-
 @media (max-width: 992px) {
   .wrapper {
     padding: 0 10px;
@@ -306,7 +302,6 @@ a {
     max-width: 34px;
   }
 }
-
 
 @media (max-width: 768px) {
   ::-webkit-scrollbar {
