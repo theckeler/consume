@@ -1,5 +1,6 @@
 module.exports = {
-    images: {
-        domains: ['admin.consumedesign.com'],
-    },
-}
+  experimental: { css: true },
+  images: {
+    domains: ["admin.consumedesign.com"],
+  },
+};
