@@ -110,6 +110,7 @@ function About(props) {
           <ul className={styles.list}>
             <li>Next.js</li>
             <li>React</li>
+            <li>Express</li>
             <li>TypeScript</li>
             <li>MySQL</li>
             <li>JSON</li>
