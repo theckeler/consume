@@ -118,6 +118,7 @@ function About(props) {
             <li>Git/Github</li>
             <li>Web Accessibility Standards (WCAG)</li>
             <li>Figma</li>
+            <li>Pug</li>
           </ul>
 
           <p>Knowlege of</p>
