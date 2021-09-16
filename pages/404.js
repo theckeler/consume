@@ -1,39 +1,38 @@
-import { useRouter } from 'next/router';
-import Header from '../components/header'
-import Footer from '../components/footer'
-import styles from '../styles/About.module.css'
-import Meta from '../components/meta'
+import { useRouter } from "next/router";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import styles from "../styles/About.module.css";
+import Meta from "../components/meta";
 
 export async function getStaticProps() {
-    const currentPage = "404 - Page Not Found"
+  const currentPage = "404 - Page Not Found";
 
-    return {
-        props: {
-            currentPage,
-        },
-    }
+  return {
+    props: {
+      currentPage,
+    },
+  };
 }
 
 function About(props) {
-    const router = useRouter();
-    return (
-        <>
-            <Meta title="404 - Page Not Found" />
+  const router = useRouter();
+  return (
+    <>
+      <Meta title="404 - Page Not Found" />
 
-            <Header currentPage="about" />
+      <Header currentPage="about" />
 
-            <section className="section">
-                <h1 className="title">404 - Page Not Found</h1>
-            </section>
+      <section className="section">
+        <h1 className="title">404 - Page Not Found</h1>
+      </section>
 
-            <section className={'wrapper ' + styles.content}>
-                <p>Sorry no dice.</p>
+      <section className={"wrapper " + styles.content}>
+        <p>Sorry no dice.</p>
+      </section>
 
-            </section>
-
-            <Footer currentPage="about"></Footer>
-        </>
-    )
+      <Footer currentPage="about"></Footer>
+    </>
+  );
 }
 
-export default About
+export default About;

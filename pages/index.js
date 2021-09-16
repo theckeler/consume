@@ -1,18 +1,18 @@
-import Header from '../components/header'
-import Footer from '../components/footer'
-import Meta from '../components/meta'
-import React, { Component } from 'react'
-import portfolioStyles from '../styles/Portfolio.module.css'
-import axios from 'axios'
-import Image from 'next/image'
-import Card from '../components/card'
+import Header from "../components/header";
+import Footer from "../components/footer";
+import Meta from "../components/meta";
+import React, { Component } from "react";
+import portfolioStyles from "../styles/Portfolio.module.css";
+import axios from "axios";
+import Image from "next/image";
+import Card from "../components/card";
 
 export async function getStaticProps() {
   const response = await axios({
-    url: 'https://admin.consumedesign.com/graphql',
-    method: 'post',
+    url: "https://admin.consumedesign.com/graphql",
+    method: "post",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     data: {
       query: `
@@ -45,9 +45,9 @@ export async function getStaticProps() {
     }
   }
 }
-      `
-    }
-  })
+      `,
+    },
+  });
 
   // debugger
 
@@ -55,12 +55,10 @@ export async function getStaticProps() {
     props: {
       posts: response.data.data.posts.edges,
     },
-  }
-
+  };
 }
 
 function Blog({ posts }) {
-
   return (
     <>
       <Meta title="Home" />
@@ -73,21 +71,24 @@ function Blog({ posts }) {
         </section>
 
         <section className={portfolioStyles.section}>
-          <div className={'wrapper ' + portfolioStyles.wrapper}>
-
+          <div className={"wrapper " + portfolioStyles.wrapper}>
             <ul className="grid noload">
-              {
-                posts.map(post => {
-                  const thisPost = post.node;
-                  const date = new Date(thisPost.dateGmt)
-                  const mediumImg = '';
-                  //console.log(thisPost)
+              {posts.map((post) => {
+                const thisPost = post.node;
+                const date = new Date(thisPost.dateGmt);
+                const mediumImg = "";
+                //console.log(thisPost)
 
-                  return (
-                    <Card featured="1" key={thisPost.id} mediumImg={mediumImg} date={date} thisPost={thisPost} />
-                  )
-                })
-              }
+                return (
+                  <Card
+                    featured="1"
+                    key={thisPost.id}
+                    mediumImg={mediumImg}
+                    date={date}
+                    thisPost={thisPost}
+                  />
+                );
+              })}
             </ul>
           </div>
         </section>
@@ -95,8 +96,7 @@ function Blog({ posts }) {
 
       <Footer currentPage="home" />
     </>
-  )
-
+  );
 }
 
-export default Blog
+export default Blog;
