@@ -32,7 +32,7 @@ const Card = (props) => (
       >
         <strong dangerouslySetInnerHTML={{ __html: props.thisPost.title }} />
         <Image
-          src={props.thisPost.featuredImage.node.sourceUrl}
+          src={props.thisPost.featuredImage.node.mediaItemUrl}
           srcSet={props.thisPost.featuredImage.node.srcSet}
           height={props.thisPost.featuredImage.node.mediaDetails.height}
           width={props.thisPost.featuredImage.node.mediaDetails.width}
