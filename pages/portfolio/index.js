@@ -122,7 +122,6 @@ query MyQuery {
                 {this.state.posts.map((post) => {
                   const thisPost = post.node;
                   const date = new Date(thisPost.dateGmt);
-                  console.log("post", thisPost);
 
                   var featured = thisPost.categories.nodes.find(function (
                     value,
