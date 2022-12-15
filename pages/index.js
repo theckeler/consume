@@ -77,6 +77,7 @@ function Blog({ posts }) {
                 const thisPost = post.node;
                 const date = new Date(thisPost.dateGmt);
                 const mediumImg = "";
+
                 //console.log(thisPost)
 
                 return (
