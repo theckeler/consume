@@ -10,6 +10,7 @@
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
     "@types/react-router": "^5.1.13",
+    "@vercel/analytics": "^0.1.6",
     "axios": "^0.21.1",
     "document": "^0.0.0",
     "fslightbox-react": "^1.6.2",
