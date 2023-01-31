@@ -97,6 +97,7 @@ function About(props) {
 
           <p>Proficient in</p>
           <ul className={styles.list}>
+            <li>React.js</li>
             <li>PHP</li>
             <li>JavaScript</li>
             <li>jQuery</li>
@@ -109,7 +110,6 @@ function About(props) {
           <p>Experienced in</p>
           <ul className={styles.list}>
             <li>Next.js</li>
-            <li>React.js</li>
             <li>Express.js</li>
             <li>TypeScript</li>
             <li>MySQL</li>
@@ -139,7 +139,33 @@ function About(props) {
         <section className={"wrapper grid " + styles.exp}>
           <ul>
             <li className={styles.title}>
-              Freelance Graphic Designer 12/1996 - Present
+              Front-end Development & Designer, Stanley Black & Decker, Inc.
+              7/2021- Present
+            </li>
+            <li>
+              <p>Formally MTD Products.</p>
+              <p>
+                Working within Salesforce to design compelling creative for
+                Troybilt.com, Cubcadet.com and MTD's other B2C websites that
+                includes homepage, landing pages, banners, graphic-headers, and
+                eSpots. Leverage consumer insight studies and findings to
+                establish the best overall design elements to include in UX
+                design experiences. Plan and run user tests and other design
+                research to inform design decisions. Assist channel and
+                eCommerce team on development. Collaborate and brainstorm with
+                cross-functional teams including agencies on design execution
+                for short term and long-term projects.
+              </p>
+              <p>
+                <strong>Clients include:</strong> DeWaly, Cub Cadet, Troy-Bilt,
+                Rover, MTD Genuine Parts, WOLF-Garten, Yard Machines
+              </p>
+            </li>
+          </ul>
+
+          <ul>
+            <li className={styles.title}>
+              Freelance Graphic Designer 12/1996 - 8/2019
             </li>
             <li>
               <p>
@@ -155,30 +181,6 @@ function About(props) {
                 Nesnadny + Schwartz, North AmericanHandmade Bicycle Show,
                 Pursuit Cycles, Rockgeist, Strong Frames, UGQ Outdoor, Werner
                 Paddles
-              </p>
-            </li>
-          </ul>
-
-          <ul>
-            <li className={styles.title}>
-              UX/UI Graphic Designer, MTD Products 7/2021- Present
-            </li>
-            <li>
-              <p>
-                Working within Salesforce to design compelling creative for
-                Troybilt.com, Cubcadet.com and MTD's other B2C websites that
-                includes homepage, landing pages, banners, graphic-headers, and
-                eSpots. Leverage consumer insight studies and findings to
-                establish the best overall design elements to include in UX
-                design experiences. Plan and run user tests and other design
-                research to inform design decisions. Assist channel and
-                eCommerce team on development. Collaborate and brainstorm with
-                cross-functional teams including agencies on design execution
-                for short term and long-term projects.
-              </p>
-              <p>
-                <strong>Clients include:</strong> Cub Cadet, Troy-Bilt, Rover,
-                MTD Genuine Parts, WOLF-Garten, Yard Machines
               </p>
             </li>
           </ul>
