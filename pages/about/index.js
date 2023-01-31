@@ -165,7 +165,8 @@ function About(props) {
 
           <ul>
             <li className={styles.title}>
-              Freelance Graphic Designer 12/1996 - 8/2019
+              Stay at Home Dad & Freelance UX/UI/Web/Graphic/Visual Designer,
+              Front-End/UI Developer 12/1996 - 8/2019
             </li>
             <li>
               <p>
